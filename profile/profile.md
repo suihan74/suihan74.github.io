@@ -51,7 +51,7 @@ title: Profile
   - Github: https://github.com/suihan74/ProjectEuler
 - コンパイラ・スクリプト言語実行用ランタイムの実装に関する学習 (2017)
   - C++14
-  - 字句解析，構文解析，式木評価，レジスタマシン，ガベージコレクション，async/awaitの実装など
+  - 字句解析，構文解析，レジスタマシン，ガベージコレクション，async/awaitの実装など
 - UWPでのはてなブックマーク閲覧/投稿アプリ作成 (2018)
   - C#7
   - 後にAndroidアプリ作成に方針転換
