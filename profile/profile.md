@@ -1,6 +1,11 @@
+---
+layout: default
+title: Profile
+---
+
 # Profile
 
-## About（ネット向け）
+## About
 - すいはん
 - 1992/12/06
 - 神奈川県横浜市 在住
