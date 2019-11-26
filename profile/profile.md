@@ -14,6 +14,9 @@ title: Profile
 - blog -> https://suihan74.orz.hm/blog/
 - Twitter -> https://twitter.com/suihan742
 
+## 資格
+- 基本情報技術者試験 合格 (2015秋期)
+
 ## 言語
 - C (ANSI-C, C99)
 - C++ (C++03, C++11, C++14)
