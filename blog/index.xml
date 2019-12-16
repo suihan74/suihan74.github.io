@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>すいはんブログ.io</title>
+    <link>http://suihan74.github.io/blog/</link>
+    <description>Recent content on すいはんブログ.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 17 Dec 2019 00:38:06 +0900</lastBuildDate>
+    
+	<atom:link href="http://suihan74.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>http://suihan74.github.io/blog/about/</link>
+      <pubDate>Tue, 17 Dec 2019 00:38:06 +0900</pubDate>
+      
+      <guid>http://suihan74.github.io/blog/about/</guid>
+      <description>About</description>
+    </item>
+    
+    <item>
+      <title>hello world</title>
+      <link>http://suihan74.github.io/blog/posts/2019/first/</link>
+      <pubDate>Tue, 17 Dec 2019 00:30:02 +0900</pubDate>
+      
+      <guid>http://suihan74.github.io/blog/posts/2019/first/</guid>
+      <description>hello world ハローワールドではなくハローワークしろ。
+class Hoge {} </description>
+    </item>
+    
+  </channel>
+</rss>
