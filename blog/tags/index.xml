@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on すいはんブログ.io</title>
-    <link>http://suihan74.github.io/blog/tags/</link>
+    <link>https://suihan74.github.io/blog/tags/</link>
     <description>Recent content in Tags on すいはんブログ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 17 Dec 2019 00:30:02 +0900</lastBuildDate>
     
-	<atom:link href="http://suihan74.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://suihan74.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>hoge</title>
-      <link>http://suihan74.github.io/blog/tags/hoge/</link>
+      <link>https://suihan74.github.io/blog/tags/hoge/</link>
       <pubDate>Tue, 17 Dec 2019 00:30:02 +0900</pubDate>
       
-      <guid>http://suihan74.github.io/blog/tags/hoge/</guid>
+      <guid>https://suihan74.github.io/blog/tags/hoge/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hoge on すいはんブログ.io</title>
-    <link>http://suihan74.github.io/blog/tags/hoge/</link>
+    <link>https://suihan74.github.io/blog/tags/hoge/</link>
     <description>Recent content in hoge on すいはんブログ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 17 Dec 2019 00:30:02 +0900</lastBuildDate>
     
-	<atom:link href="http://suihan74.github.io/blog/tags/hoge/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://suihan74.github.io/blog/tags/hoge/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>hello world</title>
-      <link>http://suihan74.github.io/blog/posts/2019/first/</link>
+      <link>https://suihan74.github.io/blog/posts/2019/first/</link>
       <pubDate>Tue, 17 Dec 2019 00:30:02 +0900</pubDate>
       
-      <guid>http://suihan74.github.io/blog/posts/2019/first/</guid>
+      <guid>https://suihan74.github.io/blog/posts/2019/first/</guid>
       <description>hello world ハローワールドではなくハローワークしろ。
 class Hoge {} </description>
     </item>
