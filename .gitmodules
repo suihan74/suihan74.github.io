@@ -1,0 +1,3 @@
+[submodule "github-style"]
+	path = github-style
+	url = git@github.com:suihan74/github-style.git
