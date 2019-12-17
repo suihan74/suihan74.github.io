@@ -28,7 +28,7 @@
       
       <guid>https://suihan74.github.io/posts/2019/first/</guid>
       <description>hello world ハローワールドではなくハローワークしろ。
-class Hoge {} </description>
+class Foo { fun bar() = Log.i(&amp;#34;baz&amp;#34;, &amp;#34;hello world&amp;#34;) } </description>
     </item>
     
   </channel>
