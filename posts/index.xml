@@ -6,10 +6,25 @@
     <description>Recent content in Posts on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 20 Dec 2019 03:43:29 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 22 Dec 2019 03:57:59 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fragment内のスクロールでActivityのToolbarが動くのを回避する</title>
+      <link>https://suihan74.github.io/posts/2019/12_22_00/</link>
+      <pubDate>Sun, 22 Dec 2019 03:57:59 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2019/12_22_00/</guid>
+      <description>問題があったレイアウト例 &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; xmlns:app=&amp;#34;http://schemas.android.com/apk/res-auto&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;&amp;gt; &amp;lt;com.google.android.material.appbar.AppBarLayout android:id=&amp;#34;@+id/appbar_layout&amp;#34; app:elevation=&amp;#34;0dp&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34;&amp;gt; &amp;lt;androidx.appcompat.widget.Toolbar android:id=&amp;#34;@+id/toolbar&amp;#34; app:layout_scrollFlags=&amp;#34;enterAlways|scroll&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;/com.google.android.material.appbar.AppBarLayout&amp;gt; &amp;lt;!--メインコンテンツを表示するための領域 --&amp;gt; &amp;lt;FrameLayout android:id=&amp;#34;@+id/main_contents_layout&amp;#34; app:layout_behavior=&amp;#34;com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;!--メインコンテンツのアイテムを選択したら遷移する追加画面の領域 --&amp;gt; &amp;lt;FrameLayout android:id=&amp;#34;@+id/additional_content_layout&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;/androidx.coordinatorlayout.widget.CoordinatorLayout&amp;gt; main_contents_layoutは中身にリストをもつFragmentを表示して、そのスクロールに伴ってツールバーが出たり消えたりする。
+additional_contents_layoutは最初は何も表示されていないが、main_contents_layoutのFragment内でたとえばリストの項目を選択したときなどに追加で表示する。
+ちなみにこれはツールバーを含む画面全体に被さるように表示したいので、app:layout_behaviorは設定していない。
+さて、このような条件下でadditional_contents_layoutにFragment（※以下AdditionalFragmentとでもしておく）を表示すると、AdditionalFragment内に配置したRecyclerViewのスクロールにも連動してツールバーが出たり消えたりしてしまい、
+つまりAdditionalFragmentの開始前と終了後でツールバーの状態が一致しないということが起こる。
+大した問題ではないが気持ち悪いので、以下のように解決した。
+解決後のレイアウト &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;FragmeLayout xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; xmlns:app=&amp;#34;http://schemas.android.com/apk/res-auto&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;&amp;gt; &amp;lt;androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;&amp;gt; &amp;lt;com.google.android.material.appbar.AppBarLayout android:id=&amp;#34;@+id/appbar_layout&amp;#34; app:elevation=&amp;#34;0dp&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34;&amp;gt; &amp;lt;androidx.appcompat.widget.Toolbar android:id=&amp;#34;@+id/toolbar&amp;#34; app:layout_scrollFlags=&amp;#34;enterAlways|scroll&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;/com.google.android.material.appbar.AppBarLayout&amp;gt; &amp;lt;!--メインコンテンツを表示するための領域 --&amp;gt; &amp;lt;FrameLayout android:id=&amp;#34;@+id/main_contents_layout&amp;#34; app:layout_behavior=&amp;#34;com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;/androidx.</description>
+    </item>
     
     <item>
       <title>戻るボタンを監視するナウいやつ</title>
