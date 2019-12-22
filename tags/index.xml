@@ -6,7 +6,7 @@
     <description>Recent content in Tags on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 22 Dec 2019 03:57:59 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 23 Dec 2019 01:18:10 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>android</title>
       <link>https://suihan74.github.io/tags/android/</link>
-      <pubDate>Sun, 22 Dec 2019 03:57:59 +0900</pubDate>
+      <pubDate>Mon, 23 Dec 2019 01:18:10 +0900</pubDate>
       
       <guid>https://suihan74.github.io/tags/android/</guid>
       <description></description>
@@ -23,9 +23,18 @@
     <item>
       <title>kotlin</title>
       <link>https://suihan74.github.io/tags/kotlin/</link>
-      <pubDate>Sun, 22 Dec 2019 03:57:59 +0900</pubDate>
+      <pubDate>Mon, 23 Dec 2019 01:18:10 +0900</pubDate>
       
       <guid>https://suihan74.github.io/tags/kotlin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OnBackPressedDispatcher</title>
+      <link>https://suihan74.github.io/tags/onbackpresseddispatcher/</link>
+      <pubDate>Mon, 23 Dec 2019 01:18:10 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/onbackpresseddispatcher/</guid>
       <description></description>
     </item>
     

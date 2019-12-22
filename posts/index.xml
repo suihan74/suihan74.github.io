@@ -6,10 +6,25 @@
     <description>Recent content in Posts on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 22 Dec 2019 03:57:59 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 23 Dec 2019 01:18:10 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>OnBackPressedDispatcherのコールバック追加タイミングに関するTips</title>
+      <link>https://suihan74.github.io/posts/2019/12_23_00_on_back_pressed_dispatcher/</link>
+      <pubDate>Mon, 23 Dec 2019 01:18:10 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2019/12_23_00_on_back_pressed_dispatcher/</guid>
+      <description>おさらい  Fragmentの戻るボタン処理についてのお話。 AppCompatActivity.onBackPressed()をオーバーライドしてごちゃごちゃやるよりはAppCompatActivity.onBackPressedDispatcher.addCallback()を使うのがナウい。 addCallback(owner: lifecycleOwner,...)は最後に追加されたものでかつ有効なものだけが処理される。 AppCompatActivity.onBackPressed()の中でonBackPressedDisptacher.onBackPressed()を呼ぶようになっているので、自前のActivityでオーバーライドした場合その中でsuper.onBackPressed()を呼ばないとコールバックは全て無視される。  問題  addCallback(owner: lifecycleOwner,...)は最後に追加されたものでかつ有効なものだけが処理される。
+  Activity側のonCreate()内でActivityの戻るボタン処理をaddCallback()する。 onCreate()内でFragmentを作成してsupportFragmentManagerにaddする。 Fragment側ではonCreateView()内でFragmentの戻るボタン処理をaddCallback()する。  という3ステップを踏んだ場合、どうも戻るボタンコールバックのスタックに積まれる順番は想定していた 1:Activity → 2:Fragment ではなく、1:Fragment → 2:Activity になる。
+原因 公式リファレンス / OnBackPressedDispatcher には次のように記述がある。
+ Receive callbacks to a new OnBackPressedCallback when the given LifecycleOwner is at least started.
+ onStart()が呼ばれる順番は 1:Activity → 2:Fragment じゃなかったかしらと思ったら、 LifecyclerStateがSTARTEDになるのはonStart()が呼ばれたときではなく抜けたときなのであった。
+ STARTED
+Started state for a LifecycleOwner. For an Activity, this state is reached in two cases:</description>
+    </item>
     
     <item>
       <title>Fragment内のスクロールでActivityのToolbarが動くのを回避する</title>
@@ -32,13 +47,15 @@ additional_contents_layoutは最初は何も表示されていないが、main_c
       <pubDate>Fri, 20 Dec 2019 03:43:29 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2019/12_20_00/</guid>
-      <description>やりたいこと  必要があればFragment側で「戻るボタン」押下を処理する（Activityには処理を伝搬させない） Fragment側で処理する必要がないときはActivityが処理する。  これまで これまで、Fragmentには戻るボタンのリスナが無かったので次のように自分でそれっぽいものを用意する必要があった。
+      <description>2019/12/23 追記 OnBackPressedDispatcher.addCallback()を呼ぶタイミングに関する問題があったのでコード例を修正。
+問題に関する詳細は別の記事にまとめた。
+やりたいこと  必要があればFragment側で「戻るボタン」押下を処理する（Activityには処理を伝搬させない） Fragment側で処理する必要がないときはActivityが処理する。  これまで これまで、Fragmentには戻るボタンのリスナが無かったので次のように自分でそれっぽいものを用意する必要があった。
 Fragment用にインターフェースを用意して、
 interface BackPressable { /** 処理した場合はtrueを返す */ fun onBackPressed() : Boolean } ActivityのonBackPressed()メソッドで例えばこんな感じにしていた。
 override fun onBackPressed() { val fragment = supportFragmentManager.findFragmentById(containerId) val handled = if (fragment is BackPressable) { fragment.onBackPressed() } else false if (!handled) { super.onBackPressed() } } これから androidx.fragment:fragment-ktx:1.2.0からは次のようにできる。
 まだ安定版ではなくちょくちょく実装に変更が加えられているようなので、これからまた変わるかもしれない。
 build.gradle
-implementation &amp;#34;androidx.fragment:fragment-ktx:1.2.0-rc04&amp;#34; class HogeActivity : AppCompatActivity() { fun onCreate(savedInstanceState: Bundle?) { // ~~~ 省略 ~~~  if (savedInstanceState != null) { onBackPressedDispatcher.</description>
+implementation &amp;#34;androidx.fragment:fragment-ktx:1.2.0-rc04&amp;#34; class HogeActivity : AppCompatActivity() { override fun onCreate(savedInstanceState: Bundle?) { // ~~~ 省略 ~~~  if (savedInstanceState !</description>
     </item>
     
     <item>

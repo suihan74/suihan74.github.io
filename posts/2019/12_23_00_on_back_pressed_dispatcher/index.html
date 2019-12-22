@@ -8,15 +8,15 @@
     <link crossorigin="anonymous" media="all"
         rel="stylesheet" href="https://suihan74.github.io/css/github.css" />
     <meta name="viewport" content="width=device-width">
-    <title>戻るボタンを監視するナウいやつ - すいはんぶろぐ.io</title>
+    <title>OnBackPressedDispatcherのコールバック追加タイミングに関するTips - すいはんぶろぐ.io</title>
     
-    <meta property="og:url" content="https://suihan74.github.io/posts/2019/12_20_00/"/>
+    <meta property="og:url" content="https://suihan74.github.io/posts/2019/12_23_00_on_back_pressed_dispatcher/"/>
     <meta property="og:site_name" content="すいはんぶろぐ.io"/>
     
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="戻るボタンを監視するナウいやつ" />
-    <meta property="og:description" content="onBackPressedDispatcherの使い方(2019/12/20現在)"/>
-    <meta name="description" content="onBackPressedDispatcherの使い方(2019/12/20現在)"/>
+    <meta property="og:title" content="OnBackPressedDispatcherのコールバック追加タイミングに関するTips" />
+    <meta property="og:description" content="タイミングを誤ると画面の一番上にあるFragmentのコールバックが呼ばれないので注意が必要。"/>
+    <meta name="description" content="タイミングを誤ると画面の一番上にあるFragmentのコールバックが呼ばれないので注意が必要。"/>
     
     
     <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://suihan74.github.io/images/favicon.ico">
@@ -90,9 +90,9 @@
                                     href="https://suihan74.github.io/about/">すいはん</a></span>
                             <span class="path-divider">/</span>
                             <strong itemprop="name" class="css-truncate-target" style="max-width: 410px"><a
-                                    href="https://suihan74.github.io/posts/2019/12_20_00/">戻るボタンを監視するナウいやつ</a></strong>
+                                    href="https://suihan74.github.io/posts/2019/12_23_00_on_back_pressed_dispatcher/">OnBackPressedDispatcherのコールバック追加タイミングに関するTips</a></strong>
 
-                            <div class="text-small text-gray">onBackPressedDispatcherの使い方(2019/12/20現在)</div>
+                            <div class="text-small text-gray">タイミングを誤ると画面の一番上にあるFragmentのコールバックが呼ばれないので注意が必要。</div>
 
                             
                             <div class="text-small text-gray">
@@ -106,13 +106,13 @@
 
                             
                             <div class="d-block text-small text-gray">
-                                Created <time-ago datetime="2019-12-20 03:43" class="no-wrap"
-                                    title="Created at 2019/12/20 03:43">
-                                    2019-12-20 03:43</time-ago>
+                                Created <time-ago datetime="2019-12-23 01:18" class="no-wrap"
+                                    title="Created at 2019/12/23 01:18">
+                                    2019-12-23 01:18</time-ago>
                                 <span class="file-info-divider"></span>
-                                Updated <time-ago datetime="2019-12-23 02:01" class="no-wrap"
-                                    title="Modified  at 2019/12/23 02:01">
-                                    2019-12-23 02:01</time-ago>
+                                Updated <time-ago datetime="2019-12-23 01:18" class="no-wrap"
+                                    title="Modified  at 2019/12/23 01:18">
+                                    2019-12-23 01:18</time-ago>
                             </div>
                         </h1>
                     </div>
@@ -127,78 +127,49 @@
                     <div class="Box mt-3 position-relative">
                         <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
                             <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-                                882 Words
+                                1156 Words
                                 
                             </div>
                         </div>
 
                         <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
-                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><h1 id="20191223-">2019/12/23 追記</h1>
-<p><code>OnBackPressedDispatcher.addCallback()</code>を呼ぶタイミングに関する問題があったのでコード例を修正。</p>
-<p>問題に関する詳細は<a href="../12_23_00_on_back_pressed_dispatcher">別の記事</a>にまとめた。</p>
-<h1 id="heading">やりたいこと</h1>
-<ol>
-<li>必要があればFragment側で「戻るボタン」押下を処理する（Activityには処理を伝搬させない）</li>
-<li>Fragment側で処理する必要がないときはActivityが処理する。</li>
-</ol>
-<h1 id="heading-1">これまで</h1>
-<p>これまで、Fragmentには戻るボタンのリスナが無かったので次のように自分でそれっぽいものを用意する必要があった。</p>
-<p>Fragment用にインターフェースを用意して、</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">BackPressable</span> {
-    <span style="color:#75715e">/** 処理した場合はtrueを返す */</span>
-    <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">onBackPressed</span>() : Boolean
-}
-</code></pre></div><p>ActivityのonBackPressed()メソッドで例えばこんな感じにしていた。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">onBackPressed</span>() {
-    <span style="color:#66d9ef">val</span> fragment = supportFragmentManager.findFragmentById(containerId)
-    <span style="color:#66d9ef">val</span> handled =
-        <span style="color:#66d9ef">if</span> (fragment <span style="color:#66d9ef">is</span> BackPressable) {
-            fragment.onBackPressed()
-        }
-        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">false</span>
-
-    <span style="color:#66d9ef">if</span> (!handled) {
-        <span style="color:#66d9ef">super</span>.onBackPressed()
-    }
-}
-</code></pre></div><h1 id="heading-2">これから</h1>
-<p>androidx.fragment:fragment-ktx:1.2.0からは次のようにできる。</p>
-<p>まだ安定版ではなくちょくちょく実装に変更が加えられているようなので、これからまた変わるかもしれない。</p>
-<p>build.gradle</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">implementation <span style="color:#e6db74">&#34;androidx.fragment:fragment-ktx:1.2.0-rc04&#34;</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HogeActivity</span> : AppCompatActivity() {
-    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">onCreate</span>(savedInstanceState: Bundle?) {
-        <span style="color:#75715e">// ~~~ 省略 ~~~
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (savedInstanceState != <span style="color:#66d9ef">null</span>) {
-            onBackPressedDispatcher.addCallback(<span style="color:#66d9ef">this</span>) {
-                <span style="color:#75715e">// Activityでの戻るボタン処理
-</span><span style="color:#75715e"></span>            }
-        }
-        <span style="color:#75715e">// ~~~ 省略 ~~~
-</span><span style="color:#75715e"></span>    }
-}
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HogeFragment</span> : Fragment() {
-    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">onResume</span>() {
-        <span style="color:#66d9ef">super</span>.onResume()
-        requireActivity().onBackPressedDispatcher.addCallback(<span style="color:#66d9ef">this</span>) {
-            <span style="color:#75715e">// Fragmentでの戻るボタン処理
-</span><span style="color:#75715e"></span>        }
-    }
-}
-</code></pre></div><p><code>addCallback(owner ,enabled, onBackPressed)</code>にはそれぞれ次のような引数が設定でき、enabledは省略してもいい。</p>
+                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><h1 id="heading">おさらい</h1>
 <ul>
-<li>owner: LifecycleOwner? &hellip; ライフサイクル監視対象</li>
-<li>enabled: Boolean &hellip; このコールバックが有効か否か</li>
-<li>onBackPressed: OnBackPressedCallback.()-&gt;Unit &hellip; 「戻るボタン」が押されたときに行う処理</li>
+<li>Fragmentの戻るボタン処理についてのお話。</li>
+<li><code>AppCompatActivity.onBackPressed()</code>をオーバーライドしてごちゃごちゃやるよりは<code>AppCompatActivity.onBackPressedDispatcher.addCallback()</code>を使うのがナウい。</li>
+<li><code>addCallback(owner: lifecycleOwner,...)</code>は最後に追加されたものでかつ有効なものだけが処理される。</li>
+<li><code>AppCompatActivity.onBackPressed()</code>の中で<code>onBackPressedDisptacher.onBackPressed()</code>を呼ぶようになっているので、自前のActivityでオーバーライドした場合その中で<code>super.onBackPressed()</code>を呼ばないとコールバックは全て無視される。</li>
 </ul>
-<p>addCallbackは追加したOnBackPressedCallbackを返すので、これを使って動的にコールバックの有効無効を切り替えることができる。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">val</span> callback = requireActivity().onBackPressedDispatcher.addCallback(<span style="color:#66d9ef">this</span>) {
-    <span style="color:#75715e">// 「戻るボタン」を一回押すとこのコールバックを無効にする
-</span><span style="color:#75715e"></span>    isEnabled = <span style="color:#66d9ef">false</span>
-}
-callback.isEnabled = <span style="color:#66d9ef">true</span>
-</code></pre></div><p>コールバックは最も新しく追加された<code>isEnabled == true</code>なものが呼ばれる。</p>
-<p>なので、フラグメント側で戻る処理が必要なくなったら忘れず<code>isEnabled = false</code>しないといつまで経ってもActivityに処理が渡らないので注意。</p>
+<h1 id="heading-1">問題</h1>
+<blockquote>
+<p><code>addCallback(owner: lifecycleOwner,...)</code>は最後に追加されたものでかつ有効なものだけが処理される。</p>
+</blockquote>
+<ol>
+<li>Activity側の<code>onCreate()</code>内でActivityの戻るボタン処理を<code>addCallback()</code>する。</li>
+<li><code>onCreate()</code>内でFragmentを作成してsupportFragmentManagerにaddする。</li>
+<li>Fragment側では<code>onCreateView()</code>内でFragmentの戻るボタン処理を<code>addCallback()</code>する。</li>
+</ol>
+<p>という3ステップを踏んだ場合、どうも戻るボタンコールバックのスタックに積まれる順番は想定していた <code>1:Activity → 2:Fragment</code> ではなく、<code>1:Fragment → 2:Activity</code> になる。</p>
+<h1 id="heading-2">原因</h1>
+<p><a href="https://developer.android.com/reference/androidx/activity/OnBackPressedDispatcher">公式リファレンス / OnBackPressedDispatcher</a> には次のように記述がある。</p>
+<blockquote>
+<p>Receive callbacks to a new OnBackPressedCallback when the given LifecycleOwner is at least started.</p>
+</blockquote>
+<p><code>onStart()</code>が呼ばれる順番は <code>1:Activity → 2:Fragment</code> じゃなかったかしらと思ったら、
+LifecyclerStateがSTARTEDになるのは<code>onStart()</code>が呼ばれたときではなく<strong>抜けたとき</strong>なのであった。</p>
+<blockquote>
+<p>STARTED<br>
+Started state for a LifecycleOwner. For an Activity, this state is reached in two cases:</p>
+<ul>
+<li>after onStart call;</li>
+<li>right before onPause call.</li>
+</ul>
+</blockquote>
+<p><a href="https://developer.android.com/reference/androidx/lifecycle/Lifecycle.State.html#STARTED">公式リファレンス / Lifecycle.State</a></p>
+<p>Activity.onStart()内でFragment.onStart()が呼ばれるので、つまりLifecycle.StateがSTARTEDになる順番は <code>1:Fragment → 2:Activity</code> となる。</p>
+<p>戻るボタンコールバックはSTARTEDになった順に積まれるので、<code>Fragment.onCreateView()</code>とかでコールバックを追加するとActivityのコールバックの方が後に積まれることになり、結果的にFragmentのコールバックが無視されたような動作になる。</p>
+<h1 id="heading-3">解決</h1>
+<p>というわけで、<code>Activity.onStart()</code>が完了する前にFragmentを作成してアタッチする場合、Fragment側のコールバックを登録するコードは<code>Fragment.onResume()</code>～のタイミングで行うようにしましょうということらしい。</p>
 </article>
                         </div>
                     </div>
