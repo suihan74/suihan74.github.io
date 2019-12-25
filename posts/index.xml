@@ -6,10 +6,25 @@
     <description>Recent content in Posts on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 23 Dec 2019 01:18:10 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Dec 2019 01:09:42 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugoテーマのカスタマイズ箇所メモ</title>
+      <link>https://suihan74.github.io/posts/2019/12_26_00_theme_customize/</link>
+      <pubDate>Thu, 26 Dec 2019 01:09:42 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2019/12_26_00_theme_customize/</guid>
+      <description>どこをどう変えたか、どうやって変えたか……etcを忘れそうなので急ぎメモ。
+ベーステーマ github-style
+サンプルページ
+GitHub風……というかCSSとか一部GitHubからそのまま持ってきてる感じのあるテーマ。
+改修点 SS 詳細 1. サイトタイトルを追加 layout/layouts/partials/header.html
+&amp;lt;header class=&amp;#34;Header js-details-container Details flex-wrap flex-lg-nowrap p-responsive&amp;#34; role=&amp;#34;banner&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;Header-item d-none d-lg-flex&amp;#34;&amp;gt; &amp;lt;a class=&amp;#34;Header-link&amp;#34; href=&amp;#34;{{ .Site.BaseURL }}&amp;#34; aria-label=&amp;#34;Homepage&amp;#34; data-ga-click=&amp;#34;Header, go to dashboard, icon:logo&amp;#34;&amp;gt; &amp;lt;svg class=&amp;#34;octicon octicon-mark-github v-align-middle&amp;#34; height=&amp;#34;32&amp;#34; viewBox=&amp;#34;0 0 16 16&amp;#34; version=&amp;#34;1.1&amp;#34; width=&amp;#34;32&amp;#34; aria-hidden=&amp;#34;true&amp;#34;&amp;gt; &amp;lt;path fill-rule=&amp;#34;evenodd&amp;#34; d=&amp;#34;略&amp;#34; /&amp;gt; &amp;lt;/svg&amp;gt; &amp;lt;!--ここ --&amp;gt; &amp;lt;span style=&amp;#34;margin-left: 8px;&amp;#34;&amp;gt; {{ .Site.Title }} &amp;lt;/span&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;!--以下略 --&amp;gt; &amp;lt;/header&amp;gt; style の部分はなんとかした方がいいのかもしれない。
+ 2. Authorアイコンをクリックしても何も起きないように変更 layout/layouts/partials/user-profile.</description>
+    </item>
     
     <item>
       <title>OnBackPressedDispatcherのコールバック追加タイミングに関するTips</title>

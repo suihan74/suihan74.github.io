@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hugo on すいはんぶろぐ.io</title>
-    <link>https://suihan74.github.io/tags/hugo/</link>
-    <description>Recent content in hugo on すいはんぶろぐ.io</description>
+    <title>html on すいはんぶろぐ.io</title>
+    <link>https://suihan74.github.io/tags/html/</link>
+    <description>Recent content in html on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Thu, 26 Dec 2019 01:09:42 +0900</lastBuildDate>
     
-	<atom:link href="https://suihan74.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://suihan74.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -24,16 +24,6 @@ GitHub風……というかCSSとか一部GitHubからそのまま持ってき�
 改修点 SS 詳細 1. サイトタイトルを追加 layout/layouts/partials/header.html
 &amp;lt;header class=&amp;#34;Header js-details-container Details flex-wrap flex-lg-nowrap p-responsive&amp;#34; role=&amp;#34;banner&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;Header-item d-none d-lg-flex&amp;#34;&amp;gt; &amp;lt;a class=&amp;#34;Header-link&amp;#34; href=&amp;#34;{{ .Site.BaseURL }}&amp;#34; aria-label=&amp;#34;Homepage&amp;#34; data-ga-click=&amp;#34;Header, go to dashboard, icon:logo&amp;#34;&amp;gt; &amp;lt;svg class=&amp;#34;octicon octicon-mark-github v-align-middle&amp;#34; height=&amp;#34;32&amp;#34; viewBox=&amp;#34;0 0 16 16&amp;#34; version=&amp;#34;1.1&amp;#34; width=&amp;#34;32&amp;#34; aria-hidden=&amp;#34;true&amp;#34;&amp;gt; &amp;lt;path fill-rule=&amp;#34;evenodd&amp;#34; d=&amp;#34;略&amp;#34; /&amp;gt; &amp;lt;/svg&amp;gt; &amp;lt;!--ここ --&amp;gt; &amp;lt;span style=&amp;#34;margin-left: 8px;&amp;#34;&amp;gt; {{ .Site.Title }} &amp;lt;/span&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;!--以下略 --&amp;gt; &amp;lt;/header&amp;gt; style の部分はなんとかした方がいいのかもしれない。
  2. Authorアイコンをクリックしても何も起きないように変更 layout/layouts/partials/user-profile.</description>
-    </item>
-    
-    <item>
-      <title>hello world</title>
-      <link>https://suihan74.github.io/posts/2019/first/</link>
-      <pubDate>Tue, 17 Dec 2019 00:30:02 +0900</pubDate>
-      
-      <guid>https://suihan74.github.io/posts/2019/first/</guid>
-      <description>hello world ハローワールドではなくハローワークしろ。
-class Foo { fun bar() = Log.i(&amp;#34;baz&amp;#34;, &amp;#34;hello world&amp;#34;) } </description>
     </item>
     
   </channel>
