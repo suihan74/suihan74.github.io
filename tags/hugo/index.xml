@@ -6,10 +6,23 @@
     <description>Recent content in hugo on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 26 Dec 2019 01:09:42 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 29 Dec 2019 03:05:26 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HugoでTwitterの投稿を引用表示するために必要な設定</title>
+      <link>https://suihan74.github.io/posts/2019/12_29_00_twitter_tweet/</link>
+      <pubDate>Sun, 29 Dec 2019 03:05:26 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2019/12_29_00_twitter_tweet/</guid>
+      <description>必要な設定 https://gohugo.io/news/0.60.0-relnotes/
+config.toml に以下を追記する必要がある。
+[markup] [markup.goldmark] [markup.goldmark.renderer] unsafe = true 記事 その上で記事マークダウンの該当箇所では、Twitter公式の「ツイートを埋め込む」から得られた次のようなコードを記述する。
+&amp;lt;blockquote class=&amp;#34;twitter-tweet&amp;#34;&amp;gt;&amp;lt;p lang=&amp;#34;ja&amp;#34; dir=&amp;#34;ltr&amp;#34;&amp;gt;この十年で良かったアニメ10選書こうとして、10個に絞るのも難しいし何度も観て好きなはずなのに感想らしい感想が出てこないのも多くてなんというか何&amp;lt;/p&amp;gt;&amp;amp;mdash; すいはん (@suihan742) &amp;lt;a href=&amp;#34;https://twitter.com/suihan742/status/1210955996861882370?ref_src=twsrc%5Etfw&amp;#34;&amp;gt;December 28, 2019&amp;lt;/a&amp;gt;&amp;lt;/blockquote&amp;gt; &amp;lt;script async src=&amp;#34;https://platform.twitter.com/widgets.js&amp;#34; charset=&amp;#34;utf-8&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 結果 この十年で良かったアニメ10選書こうとして、10個に絞るのも難しいし何度も観て好きなはずなのに感想らしい感想が出てこないのも多くてなんというか何
+&amp;mdash; すいはん (@suihan742) December 28, 2019  </description>
+    </item>
     
     <item>
       <title>Hugoテーマのカスタマイズ箇所メモ</title>
