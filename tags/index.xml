@@ -6,13 +6,58 @@
     <description>Recent content in Tags on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 29 Dec 2019 03:05:26 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jan 2020 17:04:24 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hugo</title>
+      <title>android</title>
+      <link>https://suihan74.github.io/tags/android/</link>
+      <pubDate>Thu, 02 Jan 2020 17:04:24 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DataBinding</title>
+      <link>https://suihan74.github.io/tags/databinding/</link>
+      <pubDate>Thu, 02 Jan 2020 17:04:24 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/databinding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kotlin</title>
+      <link>https://suihan74.github.io/tags/kotlin/</link>
+      <pubDate>Thu, 02 Jan 2020 17:04:24 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/kotlin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LiveData</title>
+      <link>https://suihan74.github.io/tags/livedata/</link>
+      <pubDate>Thu, 02 Jan 2020 17:04:24 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/livedata/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ViewModel</title>
+      <link>https://suihan74.github.io/tags/viewmodel/</link>
+      <pubDate>Thu, 02 Jan 2020 17:04:24 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/viewmodel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
       <link>https://suihan74.github.io/tags/hugo/</link>
       <pubDate>Sun, 29 Dec 2019 03:05:26 +0900</pubDate>
       
@@ -44,24 +89,6 @@
       <pubDate>Thu, 26 Dec 2019 01:09:42 +0900</pubDate>
       
       <guid>https://suihan74.github.io/tags/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>android</title>
-      <link>https://suihan74.github.io/tags/android/</link>
-      <pubDate>Mon, 23 Dec 2019 01:18:10 +0900</pubDate>
-      
-      <guid>https://suihan74.github.io/tags/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kotlin</title>
-      <link>https://suihan74.github.io/tags/kotlin/</link>
-      <pubDate>Mon, 23 Dec 2019 01:18:10 +0900</pubDate>
-      
-      <guid>https://suihan74.github.io/tags/kotlin/</guid>
       <description></description>
     </item>
     

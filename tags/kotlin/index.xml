@@ -6,10 +6,27 @@
     <description>Recent content in kotlin on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 23 Dec 2019 01:18:10 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jan 2020 17:04:24 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/tags/kotlin/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android - DataBindingはじめ</title>
+      <link>https://suihan74.github.io/posts/2020/01_02_00_beginning_of_data_binding/</link>
+      <pubDate>Thu, 02 Jan 2020 17:04:24 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2020/01_02_00_beginning_of_data_binding/</guid>
+      <description>最近ずっとSatenaのActivity/Fragmentのコード側を作り直す作業をしていて、ViewModel + LiveDataは割と活用してきて&amp;quot;前よりは&amp;quot;いい感じになってきているのだが、
+DataBindingに関しては以前UWPアプリ作るとき（中途半端に）触れて以来、MVVMというかデータバインディングやったらやったでそれはそれで色々と面倒なことがあるイメージがあったので積極的に取り入れてなかったのだけど、楽できそうな部分ではやっていこうかと唐突に思った。
+今さら感強い上にまだ詳しく使い込んでいないので、
+とりあえず導入的なものと、
+主に忘れそうな部分についていくつかメモを書く。
+導入 build.gradle (app) ViewModelやらDataBindingを使用するのに必要な設定・依存関係を追加する。
+android { ... // DataBinding利用に必要  dataBinding { enabled = true } ... } dependencies { ... // ViewModel and LiveData  def lifecycle_version = &amp;#34;2.1.0&amp;#34; implementation &amp;#34;androidx.lifecycle:lifecycle-extensions:$lifecycle_version&amp;#34; implementation &amp;#34;androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version&amp;#34; implementation &amp;#34;androidx.lifecycle:lifecycle-common-java8:$lifecycle_version&amp;#34; testImplementation &amp;#34;androidx.arch.core:core-testing:$lifecycle_version&amp;#34; ... } activity_hoge.xml 以前のレイアウトの内容を&amp;lt;layout&amp;gt;で囲い、&amp;lt;data&amp;gt; ~ &amp;lt;/data&amp;gt;にバインドに必要な情報を記述する。
+ここでは、コード側で用意してバインドするViewModelのオブジェクトをレイアウトファイル内ではvmとして扱う。
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;layout xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34;&amp;gt; &amp;lt;!--bindするデータ --&amp;gt; &amp;lt;data&amp;gt; &amp;lt;variable name=&amp;#34;vm&amp;#34; type=&amp;#34;com.suihan74.hoge.HogeViewModel&amp;#34; /&amp;gt; &amp;lt;/data&amp;gt; &amp;lt;!--以下表示部分 --&amp;gt; &amp;lt;androidx.coordinatorlayout.widget.CoordinatorLayout android:id=&amp;#34;@+id/hoge_layout&amp;#34; android:background=&amp;#34;?attr/panelBackground&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34;&amp;gt; .</description>
+    </item>
     
     <item>
       <title>OnBackPressedDispatcherのコールバック追加タイミングに関するTips</title>
