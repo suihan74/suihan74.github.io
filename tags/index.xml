@@ -6,7 +6,7 @@
     <description>Recent content in Tags on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 02 Jan 2020 22:15:23 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jan 2020 00:12:34 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>android</title>
       <link>https://suihan74.github.io/tags/android/</link>
-      <pubDate>Thu, 02 Jan 2020 22:15:23 +0900</pubDate>
+      <pubDate>Fri, 03 Jan 2020 00:12:34 +0900</pubDate>
       
       <guid>https://suihan74.github.io/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kotlin</title>
+      <link>https://suihan74.github.io/tags/kotlin/</link>
+      <pubDate>Fri, 03 Jan 2020 00:12:34 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/kotlin/</guid>
       <description></description>
     </item>
     
@@ -26,15 +35,6 @@
       <pubDate>Thu, 02 Jan 2020 17:04:24 +0900</pubDate>
       
       <guid>https://suihan74.github.io/tags/databinding/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kotlin</title>
-      <link>https://suihan74.github.io/tags/kotlin/</link>
-      <pubDate>Thu, 02 Jan 2020 17:04:24 +0900</pubDate>
-      
-      <guid>https://suihan74.github.io/tags/kotlin/</guid>
       <description></description>
     </item>
     
