@@ -6,10 +6,29 @@
     <description>Recent content on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 02 Jan 2020 17:04:24 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jan 2020 22:15:23 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AlertDialogにスタイルが適用されなくて無邪気におかしいなとか思った話</title>
+      <link>https://suihan74.github.io/posts/2020/01_02_01_androidx_alert_dialog/</link>
+      <pubDate>Thu, 02 Jan 2020 22:15:23 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2020/01_02_01_androidx_alert_dialog/</guid>
+      <description>android:接頭辞のつく属性はサポートライブラリのスタイルには使わない。
+以上。
+発生した問題   AlertDialogを使うときに、うっかりandroidx.appcompat.app.AlertDialogとandroid.app.AlertDialogを混在させていた。
+  そのどちらでも共通のスタイルを使用していた。
+  アプリで使用するダイアログで下部ボタン（Positive, Negative, Neutral）の色がちゃんとスタイル適用されるものとされないものがあった。
+  原因  注: サポート ライブラリの属性名は、android: 接頭辞を使用しません。これは Android フレームワークの属性にのみ使用します。
+ スタイルとテーマ | Android Developers
+はい切腹しますありがとうございました。
+修正   すべてのAlertDialogインポート部分をandroidx.appcompat.app.AlertDialogに統一。
+  ボタンスタイルを次のように指定。
+  &amp;lt;item name=&amp;#34;buttonBarPositiveButtonStyle&amp;#34;&amp;gt;@style/PositiveButtonStyle&amp;lt;/item&amp;gt; &amp;lt;item name=&amp;#34;buttonBarNegativeButtonStyle&amp;#34;&amp;gt;@style/NegativeButtonStyle&amp;lt;/item&amp;gt; &amp;lt;item name=&amp;#34;buttonBarNeutralButtonStyle&amp;#34;&amp;gt;@style/NeutralButtonStyle&amp;lt;/item&amp;gt; </description>
+    </item>
     
     <item>
       <title>Android - DataBindingはじめ</title>
