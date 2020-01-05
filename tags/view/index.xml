@@ -6,10 +6,24 @@
     <description>Recent content in view on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 06 Jan 2020 00:18:01 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jan 2020 02:49:08 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/tags/view/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LinkMovementMethodを設定したTextViewの文字列選択を解除するとクラッシュする</title>
+      <link>https://suihan74.github.io/posts/2020/01_06_01_selectable_textview/</link>
+      <pubDate>Mon, 06 Jan 2020 02:49:08 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2020/01_06_01_selectable_textview/</guid>
+      <description>問題 以下の条件のTextViewを用意する。
+ movementMethodにLinkMovementMethodを設定する。 android:textIsSelectable=&amp;quot;true&amp;quot;を設定する。  そして以下の手順で操作を行うと、アプリがクラッシュする。
+ 該当TextViewの文字列を選択する。 TextView上の適当な領域をタップして文字列選択を解除する。 破滅する。  ちなみに、
+LinkMovementMethodのreturn super.onTouchEvent(...)の部分にブレークポイントを置いてから文字列選択解除すると発生しなくてなんやねんってなった。
+また、解除時のタップは単押し長押しに関わらずとにかくMotionEvent.ACTION_DOWNがきた時点で駄目っぽかった。
+様子 ログ java.lang.IllegalArgumentException: Invalid offset: -1. Valid range is [0, 16] at android.text.method.WordIterator.checkOffsetIsValid(WordIterator.java:380) at android.text.method.WordIterator.isBoundary(WordIterator.java:101) at android.widget.Editor$SelectionStartHandleView.positionAtCursorOffset(Editor.java:4260) at android.widget.Editor$HandleView.updatePosition(Editor.java:3708) at android.widget.Editor$PositionListener.onPreDraw(Editor.java:2507) at android.view.ViewTreeObserver.dispatchOnPreDraw(ViewTreeObserver.java:944) at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:2055) at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:1107) at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:6013) at android.view.Choreographer$CallbackRecord.run(Choreographer.java:858) at android.view.Choreographer.doCallbacks(Choreographer.java:670) at android.view.Choreographer.doFrame(Choreographer.java:606) at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:844) at android.os.Handler.handleCallback(Handler.java:739) at android.os.Handler.dispatchMessage(Handler.java:95) at android.os.Looper.loop(Looper.java:148) at android.app.ActivityThread.main(ActivityThread.java:5417) at java.lang.reflect.Method.invoke(Native Method) at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726) at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616) 「オフセット: -1を選択しようとしてますね」じゃねぇんじゃ。</description>
+    </item>
     
     <item>
       <title>タイトルテキストがMarqueeするToolbarを作る</title>
