@@ -139,7 +139,7 @@
                     <div class="Box mt-3 position-relative">
                         <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
                             <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-                                1348 Words
+                                1487 Words
                                 
                             </div>
                         </div>
@@ -186,6 +186,7 @@
     at com<span style="color:#f92672">.</span><span style="color:#a6e22e">android</span><span style="color:#f92672">.</span><span style="color:#a6e22e">internal</span><span style="color:#f92672">.</span><span style="color:#a6e22e">os</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ZygoteInit</span><span style="color:#f92672">.</span><span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>ZygoteInit<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span><span style="color:#f92672">:</span>616<span style="color:#f92672">)</span>
 </code></pre></div><p>「オフセット: -1を選択しようとしてますね」じゃねぇんじゃ。</p>
 <p>コールバックとかで呼ばれてエラー発生個所までの間にユーザーコード出てこないやつ割と困る。</p>
+<p>なお、この様子gifアニメーションのように<code>TextView.customSelectionActionModeCallback</code>を設定して文字列選択を監視していると、そちらにも<code>selectionStart = -1</code>とか<code>selectionEnd = -1</code>とかの値が入ってくる。やめてほしい。</p>
 <h1 id="heading-3">解決方法</h1>
 <p><a href="https://stackoverflow.com/questions/33821008/illegalargumentexception-while-selecting-text-in-android-textview/43290390#43290390">IllegalArgumentException while selecting text in Android TextView - Stack Overflow</a></p>
 <p>阪本さんアイコンの人が対処方法を見つけていたので集合知すごいという感じだ。</p>
