@@ -6,10 +6,22 @@
     <description>Recent content in kotlin on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 03 Jan 2020 00:12:34 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jan 2020 00:18:01 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/tags/kotlin/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>タイトルテキストがMarqueeするToolbarを作る</title>
+      <link>https://suihan74.github.io/posts/2020/01_06_00_marquee_toolbar/</link>
+      <pubDate>Mon, 06 Jan 2020 00:18:01 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2020/01_06_00_marquee_toolbar/</guid>
+      <description>やりたいこと こういうの。
+ツールバーのtitle部分の文字列が横に流れ続けている。
+カスタムビューの作成 Toolbarを継承した次のようなカスタムビューを作成する。
+MarqueeToolbar.kt package com.suihan74.utilities import android.content.Context import android.text.TextUtils import android.util.AttributeSet import android.widget.TextView import androidx.appcompat.widget.Toolbar class MarqueeToolbar : Toolbar { constructor(context: Context, attributeSet: AttributeSet? = null) : super(context, attributeSet) constructor(context: Context, attributeSet: AttributeSet?, defStyleAttr: Int) : super(context, attributeSet, defStyleAttr) /** タイトルの設定が完了しているか否か */ private var reflected: Boolean = false /** タイトル部分のTextView */ private var titleTextView: TextView? = null override fun setTitle(resId: Int) { if (!reflected) { reflected = reflectTitle() } super.</description>
+    </item>
     
     <item>
       <title>スクロールで画面上下端のツールバーやボタンを表示/非表示</title>
