@@ -6,15 +6,24 @@
     <description>Recent content in Tags on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 06 Jan 2020 02:49:08 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jan 2020 03:02:05 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>activity</title>
+      <link>https://suihan74.github.io/tags/activity/</link>
+      <pubDate>Tue, 07 Jan 2020 03:02:05 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/activity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>android</title>
       <link>https://suihan74.github.io/tags/android/</link>
-      <pubDate>Mon, 06 Jan 2020 02:49:08 +0900</pubDate>
+      <pubDate>Tue, 07 Jan 2020 03:02:05 +0900</pubDate>
       
       <guid>https://suihan74.github.io/tags/android/</guid>
       <description></description>
@@ -23,7 +32,7 @@
     <item>
       <title>kotlin</title>
       <link>https://suihan74.github.io/tags/kotlin/</link>
-      <pubDate>Mon, 06 Jan 2020 02:49:08 +0900</pubDate>
+      <pubDate>Tue, 07 Jan 2020 03:02:05 +0900</pubDate>
       
       <guid>https://suihan74.github.io/tags/kotlin/</guid>
       <description></description>
@@ -66,7 +75,7 @@
     </item>
     
     <item>
-      <title>Hugo</title>
+      <title>hugo</title>
       <link>https://suihan74.github.io/tags/hugo/</link>
       <pubDate>Sun, 29 Dec 2019 03:05:26 +0900</pubDate>
       

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>activity on すいはんぶろぐ.io</title>
+    <link>https://suihan74.github.io/tags/activity/</link>
+    <description>Recent content in activity on すいはんぶろぐ.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Tue, 07 Jan 2020 03:02:05 +0900</lastBuildDate>
+    
+	<atom:link href="https://suihan74.github.io/tags/activity/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>結果を返すActivityを呼ぶ</title>
+      <link>https://suihan74.github.io/posts/2020/01_07_00_start_activity_for_result/</link>
+      <pubDate>Tue, 07 Jan 2020 03:02:05 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2020/01_07_00_start_activity_for_result/</guid>
+      <description>Activityから戻ってくる際にその結果を受け取る必要がある場合のやりかた。
+こういうネタ何書いても今さら感しかないわけだけど、しかし作っているもの的にこれまであまり必要なシーンも無かったので、備忘。
+1. 結果を返すActivityの呼び方 startActivity(intent)の代わりにstartActivityForResult(intent: Intent, requestCode: Int)を使用する。
+startActivityForResult(intent, HogeActivity.REQUEST_CODE) requestCodeはInt型だが16bit範囲内の値である必要がある1。
+これを守らないとIllegalArgumentException投げられる。
+定数値以外を使う場合0xffffでマスクするなりしてナントカする。
+Fragmentから呼んで、返ってきた結果をActivityで処理する場合 Fragment.startActivityForResult(...)を使用するとActivity.onActivityResult(...)に渡されるrequestCodeが意図しないものになる。
+以下のどちらかで対応。
+ Activityで結果を受け取りたいならactivity?.startActivityForResult(...)とかに書き換える。 Fragment.onActivityResult(...)で受け取る。  2. Activityから結果を返して終了する Activity.finish()を呼ぶ前にresultCodeと結果を返すためのIntentをセットする。
+val intent = Intent().apply { putExtra(RESULT_DATA, result) } setResult(Activity.RESULT_OK, intent) finish() 成功ならActivity.RESULT_OK、失敗ならActivity.RESULT_CANCELEDがあるのでそれを使えばそれで良い気がする。
+何も指定しないとActivity.RESULT_CANCELEDが返ってくるっぽい。
+3. 返ってきた結果を受け取る override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) { super.onActivityResult(requestCode, resultCode, data) when (requestCode) { HogeActivity.REQUEST_CODE -&amp;gt; { when (resultCode) { Activity.RESULT_OK -&amp;gt; { val result = data?.getSerializableExtra(HogeActivity.RESULT_DATA) as? HogeResult ... } Activity.</description>
+    </item>
+    
+  </channel>
+</rss>
