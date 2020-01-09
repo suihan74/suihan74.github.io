@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>android</title>
-      <link>https://suihan74.github.io/tags/android/</link>
-      <pubDate>Thu, 09 Jan 2020 17:08:19 +0900</pubDate>
-      
-      <guid>https://suihan74.github.io/tags/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>coroutine</title>
       <link>https://suihan74.github.io/tags/coroutine/</link>
       <pubDate>Thu, 09 Jan 2020 17:08:19 +0900</pubDate>
@@ -44,6 +35,15 @@
       <pubDate>Tue, 07 Jan 2020 03:02:05 +0900</pubDate>
       
       <guid>https://suihan74.github.io/tags/activity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>android</title>
+      <link>https://suihan74.github.io/tags/android/</link>
+      <pubDate>Tue, 07 Jan 2020 03:02:05 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/android/</guid>
       <description></description>
     </item>
     

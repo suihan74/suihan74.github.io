@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://suihan74.github.io/tags/android/</loc>
-    <lastmod>2020-01-09T17:08:19+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://suihan74.github.io/tags/coroutine/</loc>
     <lastmod>2020-01-09T17:08:19+09:00</lastmod>
   </url>
@@ -39,6 +34,11 @@
   
   <url>
     <loc>https://suihan74.github.io/tags/activity/</loc>
+    <lastmod>2020-01-07T03:02:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://suihan74.github.io/tags/android/</loc>
     <lastmod>2020-01-07T03:02:05+09:00</lastmod>
   </url>
   
