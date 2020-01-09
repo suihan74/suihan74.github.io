@@ -6,10 +6,29 @@
     <description>Recent content in Posts on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 07 Jan 2020 03:02:05 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jan 2020 17:08:19 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>外部からprivateなsuspendメソッドを実行する方法</title>
+      <link>https://suihan74.github.io/posts/2020/01_09_00_reflection_invoke_suspend/</link>
+      <pubDate>Thu, 09 Jan 2020 17:08:19 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2020/01_09_00_reflection_invoke_suspend/</guid>
+      <description>プライベートメソッドのテストを書きたいときなどの方法。
+Class.getDeclaredMethod(...)を使ってプライベートメソッドを取得して実行する際に気を付けなければいけないことが通常のメソッドに比して少し増える。
+実行したいメソッド たとえば以下のようなメソッドをリフレクションでぶっこ抜いてきて実行したいとする。
+class Hoge { private suspend fun hoge(foo: Int, bar: String) = withContext(Dispachers.IO) { ... } } メソッドの取得方法 val hogeMethod = Hoge::class.java.getDeclaredMethod( &amp;#34;hoge&amp;#34;, Int::class.java, String::class.java, Continuation::class.java ).apply { isAccessible = true } 引数型の最後にContinuation::class.javaを記述する必要がある。
+取得したメソッドの実行方法 次のような拡張メソッドを用意しておく（とまぁ便利）。
+suspend fun Method.invokeSuspend(obj: Any, vararg args: Any?) : Any? = suspendCoroutineUninterceptedOrReturn { cont -&amp;gt; invoke(obj, *args, cont) } インスタンスと引数を渡して実行する。
+hogeMethod.invokeSuspend(instance, 0, &amp;#34;hoge&amp;#34;) テストでこの処理結果を受けてassertEquals(...)とかしたい場合は、
+runBlockingするなりして終了を待機しておけばいいんだろうか。
+いい感じの方法が他にあれば知りたい。
+余談 Continuation&amp;lt;ResultT&amp;gt;を作ってmethod.invoke(...)の引数に渡すことも可能と言えば可能。
+val continuation = Continuation&amp;lt;HogeResult&amp;gt;(coroutineContext) { result -&amp;gt; // hogeMethodの完了後呼ばれる  .</description>
+    </item>
     
     <item>
       <title>結果を返すActivityを呼ぶ</title>

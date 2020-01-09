@@ -6,10 +6,37 @@
     <description>Recent content in Tags on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 07 Jan 2020 03:02:05 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jan 2020 17:08:19 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>android</title>
+      <link>https://suihan74.github.io/tags/android/</link>
+      <pubDate>Thu, 09 Jan 2020 17:08:19 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>coroutine</title>
+      <link>https://suihan74.github.io/tags/coroutine/</link>
+      <pubDate>Thu, 09 Jan 2020 17:08:19 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/coroutine/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kotlin</title>
+      <link>https://suihan74.github.io/tags/kotlin/</link>
+      <pubDate>Thu, 09 Jan 2020 17:08:19 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/kotlin/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>activity</title>
@@ -17,24 +44,6 @@
       <pubDate>Tue, 07 Jan 2020 03:02:05 +0900</pubDate>
       
       <guid>https://suihan74.github.io/tags/activity/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>android</title>
-      <link>https://suihan74.github.io/tags/android/</link>
-      <pubDate>Tue, 07 Jan 2020 03:02:05 +0900</pubDate>
-      
-      <guid>https://suihan74.github.io/tags/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kotlin</title>
-      <link>https://suihan74.github.io/tags/kotlin/</link>
-      <pubDate>Tue, 07 Jan 2020 03:02:05 +0900</pubDate>
-      
-      <guid>https://suihan74.github.io/tags/kotlin/</guid>
       <description></description>
     </item>
     
