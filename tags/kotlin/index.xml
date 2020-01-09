@@ -26,8 +26,8 @@ suspend fun Method.invokeSuspend(obj: Any, vararg args: Any?) : Any? = suspendCo
 hogeMethod.invokeSuspend(instance, 0, &amp;#34;hoge&amp;#34;) テストでこの処理結果を受けてassertEquals(...)とかしたい場合は、
 runBlockingするなりして終了を待機しておけばいいんだろうか。
 いい感じの方法が他にあれば知りたい。
-余談 Continuation&amp;lt;ResultT&amp;gt;を作ってmethod.invoke(...)の引数に渡すことも可能と言えば可能。
-val continuation = Continuation&amp;lt;HogeResult&amp;gt;(coroutineContext) { result -&amp;gt; // hogeMethodの完了後呼ばれる  .</description>
+ 参考
+java - How to run suspend method via reflection?</description>
     </item>
     
     <item>
