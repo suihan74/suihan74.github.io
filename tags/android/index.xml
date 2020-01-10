@@ -6,10 +6,27 @@
     <description>Recent content in android on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 07 Jan 2020 03:02:05 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jan 2020 04:30:41 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HideBottomViewOnScrollBehaviorの状態を外部から変更する</title>
+      <link>https://suihan74.github.io/posts/2020/01_11_00_hide_bottom_view_on_scroll_behavior/</link>
+      <pubDate>Sat, 11 Jan 2020 04:30:41 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2020/01_11_00_hide_bottom_view_on_scroll_behavior/</guid>
+      <description>関連記事 スクロールで画面上下端のツールバーやボタンを表示/非表示
+前提  HideBottomViewOnScrollBehaviorを使用することでコンテンツのスクロールにあわせて画面下部の表示物を表示したり隠したりできる。 protectedメソッドslideDown(child)が呼ばれることで画面下端より下にビューを移動して隠す。slideUp(child)で元の位置に戻して再表示する。  問題 たとえばコンテンツ部分にタブを表示していて、そのコンテンツ部分にはRecyclerViewが配置されているとする。
+移動前のタブでスクロールによって画面下部のビュー(以下BottomView)を隠したあとでタブを移動する。
+もし移動先のタブにスクロールできるものが無かった場合、そのタブを前面に表示している限りはBottomViewを再表示することができなくなってしまう。
+解決方法 タブが変更されたらBottomViewを強制的に再表示するようにする。
+そのためには、HideBottomViewOnScrollBehaviorをオーバーライドしてslideDown(...)、slideUp(...)を外から呼べるようにする必要がある。
+様子 画面下部FAB部分がタブの切り替えと同時に再表示される。
+このFAB部分には以下のExtendedHideBottomViewOnScrollBehavior(相当のもの)をlayoutParams.behaviorに設定している。
+ExtendedHideBottomViewOnScrollBehavior.kt package com.suihan74.utilities import android.content.Context import android.util.AttributeSet import android.view.View import com.google.android.material.behavior.HideBottomViewOnScrollBehavior class ExtendedHideBottomViewOnScrollBehavior&amp;lt;V : View&amp;gt;( context: Context?, attrs: AttributeSet? ) : HideBottomViewOnScrollBehavior&amp;lt;V&amp;gt;(context, attrs) { public override fun slideDown(child: V) { super.slideDown(child) } public override fun slideUp(child: V) { super.slideUp(child) } } HogeActivity.kt ... tab_layout.apply { setupWithViewPager(viewPager) addOnTabSelectedListener(object :TabLayout.OnTabSelectedListener { override fun onTabSelected(tab: TabLayout.Tab?) { // タブを切り替えたらBottomViewを再表示する  showButtons() } override fun onTabUnselected(p0: TabLayout.</description>
+    </item>
     
     <item>
       <title>結果を返すActivityを呼ぶ</title>

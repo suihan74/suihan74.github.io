@@ -6,10 +6,37 @@
     <description>Recent content in Tags on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 09 Jan 2020 17:08:19 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jan 2020 04:30:41 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>android</title>
+      <link>https://suihan74.github.io/tags/android/</link>
+      <pubDate>Sat, 11 Jan 2020 04:30:41 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kotlin</title>
+      <link>https://suihan74.github.io/tags/kotlin/</link>
+      <pubDate>Sat, 11 Jan 2020 04:30:41 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/kotlin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>view</title>
+      <link>https://suihan74.github.io/tags/view/</link>
+      <pubDate>Sat, 11 Jan 2020 04:30:41 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/view/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>coroutine</title>
@@ -21,38 +48,11 @@
     </item>
     
     <item>
-      <title>kotlin</title>
-      <link>https://suihan74.github.io/tags/kotlin/</link>
-      <pubDate>Thu, 09 Jan 2020 17:08:19 +0900</pubDate>
-      
-      <guid>https://suihan74.github.io/tags/kotlin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>activity</title>
       <link>https://suihan74.github.io/tags/activity/</link>
       <pubDate>Tue, 07 Jan 2020 03:02:05 +0900</pubDate>
       
       <guid>https://suihan74.github.io/tags/activity/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>android</title>
-      <link>https://suihan74.github.io/tags/android/</link>
-      <pubDate>Tue, 07 Jan 2020 03:02:05 +0900</pubDate>
-      
-      <guid>https://suihan74.github.io/tags/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>view</title>
-      <link>https://suihan74.github.io/tags/view/</link>
-      <pubDate>Mon, 06 Jan 2020 02:49:08 +0900</pubDate>
-      
-      <guid>https://suihan74.github.io/tags/view/</guid>
       <description></description>
     </item>
     
