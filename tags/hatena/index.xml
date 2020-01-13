@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hatena on すいはんぶろぐ.io</title>
+    <link>https://suihan74.github.io/tags/hatena/</link>
+    <description>Recent content in hatena on すいはんぶろぐ.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 13 Jan 2020 13:43:46 +0900</lastBuildDate>
+    
+	<atom:link href="https://suihan74.github.io/tags/hatena/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>公式がTwitterに共有しているはてブのコメントページURLがまた変わっていた件</title>
+      <link>https://suihan74.github.io/posts/2020/01_13_00_hatena_entry_url/</link>
+      <pubDate>Mon, 13 Jan 2020 13:43:46 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2020/01_13_00_hatena_entry_url/</guid>
+      <description>Twitterをぼんやり眺めていたら、1/8頃からはてブの公式アカウントが共有しているコメントページのURLが変わっていたことに気がついたのでメモ。
+この記事を書いた直前に一応Satenaにも変更を反映してある。
+Satena - はてなブックマーククライアント, はてブビューア
+すいはん無料posted withアプリーチ
+ 内容 今現在使用されているコメントページURLは次の3パターン存在することになる。
+例としてGoogleのトップページ https://www.google.com/ に対するコメントページのURLを扱う。
+パターン1 https://b.hatena.ne.jp/entry/s/www.google.com/
+要するに、https://b.hatena.ne.jp/entry/ 以下にhttpsなら/s/を加えてスキーム以外の部分を続かせればよい。
+パターン2 https://b.hatena.ne.jp/entry/https://www.google.com/
+/entry/以下に対象ページのURLをそのまま突っ込む形。少し前からはてブ公式はこれをTwitterに投稿していた。
+パターン1にリダイレクトされる。
+パターン3 https://b.hatena.ne.jp/entry?url=https%3A%2F%2Fwww.google.com%2F
+今回増えたやつ。クエリパラメータにエンコードした対象ページURLを指定している。
+他にも参照元がtwitterであるとかエントリのカテゴリが何であるかといったパラメータが付いているが別に付けなくてもページは開く。
+パラメータがないなら対象urlも別にエンコードしてなくても開く。
+ 正直なんで最初からパターン3じゃないのか謎ではあるが、これに対応させてめでたしめでたし……と思ったら一点問題が。
+コメントページのコメントページはどれを使って取得すればいいのか 結論としては、こちら側で「エントリURL→コメントページURL」の変換をするときはパターン1を使うのが無難という感じ。
+2階より上に行きたい場合は今調べた限りではこれを使う他ない（？）
+○: パターン1を再帰する パターン1にパターン1
+https://b.hatena.ne.jp/entry/s/b.hatena.ne.jp/entry/s/www.google.com/
+○: パターン3にパターン1のURLを渡す パターン3にパターン1
+https://b.hatena.ne.jp/entry?url=https%3A%2F%2Fb.hatena.ne.jp%2Fentry%2Fs%2Fwww.google.com%2F
+×: パターン1にパターン3のURLを渡す パターン1にパターン3
+https://b.hatena.ne.jp/entry/s/b.hatena.ne.jp/entry?url=https%3A%2F%2Fwww.google.com%2F
+×: パターン3にパターン3のURLを渡す 以下のどれも駄目
+  パターン3のエンコードされていない部分をエンコード
+https://b.hatena.ne.jp/entry?url=https%3A%2F%2Fb.hatena.ne.jp%2Fentry%3Furl%3Dhttps%3A%2F%2Fwww.google.com%2F
+  パターン3の全部分をエンコード
+https://b.hatena.ne.jp/entry?url=https%3A%2F%2Fb.hatena.ne.jp%2Fentry%3Furl%3Dhttps%253A%252F%252Fwww.google.com%252F
+  エンコードしない
+https://b.hatena.ne.jp/entry?url=https://b.hatena.ne.jp/entry?url=https://www.google.com/
+   どうでもいいけど「パターン」がゲシュタルト崩壊。</description>
+    </item>
+    
+  </channel>
+</rss>
