@@ -22,9 +22,11 @@
 Satena - はてなブックマーククライアント, はてブビューア
 すいはん無料posted withアプリーチ
  内容 今現在使用されているコメントページURLは次の3パターン存在することになる。
+パターン2,3は今のところ公式ページでは目にしておらず、SNSに投稿されるリンクに使用されている。
 例としてGoogleのトップページ https://www.google.com/ に対するコメントページのURLを扱う。
 パターン1 https://b.hatena.ne.jp/entry/s/www.google.com/
 要するに、https://b.hatena.ne.jp/entry/ 以下にhttpsなら/s/を加えてスキーム以外の部分を続かせればよい。
+はてブページ内ではこの方式が使用されている。
 パターン2 https://b.hatena.ne.jp/entry/https://www.google.com/
 /entry/以下に対象ページのURLをそのまま突っ込む形。少し前からはてブ公式はこれをTwitterに投稿していた。
 パターン1にリダイレクトされる。
