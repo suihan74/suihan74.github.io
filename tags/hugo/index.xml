@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo on すいはんぶろぐ.io</title>
+    <title>hugo on すいはんぶろぐ.io</title>
     <link>https://suihan74.github.io/tags/hugo/</link>
-    <description>Recent content in Hugo on すいはんぶろぐ.io</description>
+    <description>Recent content in hugo on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 29 Dec 2019 03:05:26 +0900</lastBuildDate>
@@ -34,9 +34,10 @@ config.toml に以下を追記する必要がある。
 ベーステーマ github-style
 サンプルページ
 GitHub風……というかCSSとか一部GitHubからそのまま持ってきてる感じのあるテーマ。
-改修点 SS 詳細 1. サイトタイトルを追加 layout/layouts/partials/header.html
-&amp;lt;header class=&amp;#34;Header js-details-container Details flex-wrap flex-lg-nowrap p-responsive&amp;#34; role=&amp;#34;banner&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;Header-item d-none d-lg-flex&amp;#34;&amp;gt; &amp;lt;a class=&amp;#34;Header-link&amp;#34; href=&amp;#34;{{ .Site.BaseURL }}&amp;#34; aria-label=&amp;#34;Homepage&amp;#34; data-ga-click=&amp;#34;Header, go to dashboard, icon:logo&amp;#34;&amp;gt; &amp;lt;svg class=&amp;#34;octicon octicon-mark-github v-align-middle&amp;#34; height=&amp;#34;32&amp;#34; viewBox=&amp;#34;0 0 16 16&amp;#34; version=&amp;#34;1.1&amp;#34; width=&amp;#34;32&amp;#34; aria-hidden=&amp;#34;true&amp;#34;&amp;gt; &amp;lt;path fill-rule=&amp;#34;evenodd&amp;#34; d=&amp;#34;略&amp;#34; /&amp;gt; &amp;lt;/svg&amp;gt; &amp;lt;!--ここ --&amp;gt; &amp;lt;span style=&amp;#34;margin-left: 8px;&amp;#34;&amp;gt; {{ .Site.Title }} &amp;lt;/span&amp;gt; &amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;!--以下略 --&amp;gt; &amp;lt;/header&amp;gt; style の部分はなんとかした方がいいのかもしれない。
- 2. Authorアイコンをクリックしても何も起きないように変更 layout/layouts/partials/user-profile.</description>
+改修点 追記 (2020/01/15 04:20) 1. GitHubのファイル変更履歴へのリンクを追加。 /layouts/partials/post.html 64 65 66 67 68 69  &amp;lt;div class=&amp;#34;d-flex py-1 py-md-0 flex-auto flex-order-1 flex-md-order-2 flex-sm-grow-0 flex-justify-between&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;BtnGroup&amp;#34;&amp;gt; {{ $historyUrl := add (substr (printf &amp;#34;https://github.com/%s/hugo_files/commits/master/content%s&amp;#34; .Site.Params.github .RelPermalink) 0 -1) &amp;#34;.md&amp;#34; }} &amp;lt;a rel=&amp;#34;nofollow&amp;#34; class=&amp;#34;btn btn-sm BtnGroup-item&amp;#34; href=&amp;#34;{{ $historyUrl }}&amp;#34;&amp;gt;History&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;   ファイルパスの取得に.File.Pathを使用すると、ディレクトリの区切り文字がエスケープされてしまってどうしようもなかった。
+.Permalink、.RelPermalinkを使用する場合は何故かエスケープは回避されるようなのでこれで/posts/2019/hoge/みたいな文字列を取得し、最後の/を削って&amp;quot;.md&amp;quot;をくっ付ける力技で(無理矢理)解決。
+2. post.htmlの「投稿日時」「更新日時」を絶対時間で表示するように変更。 ついでに「更新日時」は「投稿日時」と異なる場合のみ表示するようにした。
+/layouts/partials/post.html 37 38 39 40 41 42 43 44 45  &amp;lt;div class=&amp;#34;d-block text-small text-gray&amp;#34;&amp;gt; Created at &amp;lt;time datetime=&amp;#34;{{ .</description>
     </item>
     
     <item>
