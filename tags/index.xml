@@ -6,10 +6,37 @@
     <description>Recent content in Tags on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 13 Jan 2020 13:43:46 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2020 01:30:40 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>activity</title>
+      <link>https://suihan74.github.io/tags/activity/</link>
+      <pubDate>Wed, 15 Jan 2020 01:30:40 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/activity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>android</title>
+      <link>https://suihan74.github.io/tags/android/</link>
+      <pubDate>Wed, 15 Jan 2020 01:30:40 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kotlin</title>
+      <link>https://suihan74.github.io/tags/kotlin/</link>
+      <pubDate>Wed, 15 Jan 2020 01:30:40 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/kotlin/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hatena</title>
@@ -30,24 +57,6 @@
     </item>
     
     <item>
-      <title>android</title>
-      <link>https://suihan74.github.io/tags/android/</link>
-      <pubDate>Sat, 11 Jan 2020 04:30:41 +0900</pubDate>
-      
-      <guid>https://suihan74.github.io/tags/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kotlin</title>
-      <link>https://suihan74.github.io/tags/kotlin/</link>
-      <pubDate>Sat, 11 Jan 2020 04:30:41 +0900</pubDate>
-      
-      <guid>https://suihan74.github.io/tags/kotlin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>view</title>
       <link>https://suihan74.github.io/tags/view/</link>
       <pubDate>Sat, 11 Jan 2020 04:30:41 +0900</pubDate>
@@ -62,15 +71,6 @@
       <pubDate>Thu, 09 Jan 2020 17:08:19 +0900</pubDate>
       
       <guid>https://suihan74.github.io/tags/coroutine/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>activity</title>
-      <link>https://suihan74.github.io/tags/activity/</link>
-      <pubDate>Tue, 07 Jan 2020 03:02:05 +0900</pubDate>
-      
-      <guid>https://suihan74.github.io/tags/activity/</guid>
       <description></description>
     </item>
     
@@ -102,7 +102,7 @@
     </item>
     
     <item>
-      <title>hugo</title>
+      <title>Hugo</title>
       <link>https://suihan74.github.io/tags/hugo/</link>
       <pubDate>Sun, 29 Dec 2019 03:05:26 +0900</pubDate>
       

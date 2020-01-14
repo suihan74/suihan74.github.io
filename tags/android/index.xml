@@ -6,10 +6,27 @@
     <description>Recent content in android on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 11 Jan 2020 04:30:41 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2020 01:30:40 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ダイアログ化したActivityの外側タップ時を検知する</title>
+      <link>https://suihan74.github.io/posts/2020/01_15_00_app_dialog_theme_click_outside/</link>
+      <pubDate>Wed, 15 Jan 2020 01:30:40 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2020/01_15_00_app_dialog_theme_click_outside/</guid>
+      <description>Activityをダイアログ表示する android:themeに@style/AppDialogThemeを設定したActivityはダイアログとして表示される。(以下DialogActivityと呼称することにする)
+次のはSatenaのブクマ投稿画面を抜粋。
+AndroidManifest.xml 62 63 64 65 66  &amp;lt;activity android:name=&amp;#34;.scenes.post2.BookmarkPostActivity&amp;#34; android:theme=&amp;#34;@style/AppDialogTheme&amp;#34;&amp;gt; ... &amp;lt;/activity&amp;gt;   様子 Activityは最前面にダイアログ表示されている。
+ダイアログ外側をタップで閉じる DialogActivityの外側は暗くなっていて、この部分をタップするとDialogActivityが閉じて、その下に表示されている画面に処理が戻る。
+DialogActivityが何らかの結果を呼び出し元に返すことを期待している場合などに、この「外側タップしてからダイアログが閉じるまでの間」に処理を追加したい、というのが今回の内容である。
+関連記事 結果を返すActivityを呼ぶ
+閉じる前に処理を追加する onTouchEvent(...)はダイアログ外側のタップにも反応する。
+タップされた位置からDialogActivityの外側であることを判別するようにするのが楽そうな解決策だった。
+DialogActivity.kt override fun onTouchEvent(event: MotionEvent?): Boolean { // Activityの外側をタップして閉じる際に、結果を渡しておく  if (event?.action == MotionEvent.ACTION_DOWN &amp;amp;&amp;amp; isOutOfBounds(event)) { val intent = Intent().apply { putExtra(RESULT_HOGE, viewModel.hoge.value) } setResult(RESULT_CANCELED, intent) } return super.onTouchEvent(event) } /** Activityの外側をタップしたかを判別する */ private fun isOutOfBounds(event: MotionEvent): Boolean { val x = event.</description>
+    </item>
     
     <item>
       <title>HideBottomViewOnScrollBehaviorの状態を外部から変更する</title>
