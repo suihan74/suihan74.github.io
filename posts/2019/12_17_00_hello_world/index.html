@@ -10,14 +10,14 @@
     <link crossorigin="anonymous" media="all"
         rel="stylesheet" href="https://suihan74.github.io/css/user.css"/>
     <meta name="viewport" content="width=device-width">
-    <title>Fragment内のスクロールでActivityのToolbarが動くのを回避する - すいはんぶろぐ.io</title>
+    <title>hello world - すいはんぶろぐ.io</title>
 
-    <meta property="og:url" content="https://suihan74.github.io/posts/2019/12_22_00/"/>
+    <meta property="og:url" content="https://suihan74.github.io/posts/2019/12_17_00_hello_world/"/>
     <meta property="og:site_name" content="すいはんぶろぐ.io"/>
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Fragment内のスクロールでActivityのToolbarが動くのを回避する" />
-    <meta property="og:description" content=""/>
-    <meta name="description" content=""/>
+    <meta property="og:title" content="hello world" />
+    <meta property="og:description" content="はじめはいつもの"/>
+    <meta name="description" content="はじめはいつもの"/>
     <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://suihan74.github.io/images/favicon.ico">
     <meta name="theme-color" content="#1e2327">
 
@@ -98,9 +98,9 @@
                                     href="https://suihan74.github.io/about/">すいはん</a></span>
                             <span class="path-divider">/</span>
                             <strong itemprop="name"><a
-                                    href="https://suihan74.github.io/posts/2019/12_22_00/">Fragment内のスクロールでActivityのToolbarが動くのを回避する</a></strong>
+                                    href="https://suihan74.github.io/posts/2019/12_17_00_hello_world/">hello world</a></strong>
 
-                            
+                            <div class="text-small text-gray">はじめはいつもの</div>
 
                             
                             <div class="text-small text-gray">
@@ -108,14 +108,18 @@
                                     <svg class="octicon octicon-tag" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true">
                                         <path fill-rule="evenodd" d="M7.73 1.73C7.26 1.26 6.62 1 5.96 1H3.5C2.13 1 1 2.13 1 3.5v2.47c0 .66.27 1.3.73 1.77l6.06 6.06c.39.39 1.02.39 1.41 0l4.59-4.59a.996.996 0 000-1.41L7.73 1.73zM2.38 7.09c-.31-.3-.47-.7-.47-1.13V3.5c0-.88.72-1.59 1.59-1.59h2.47c.42 0 .83.16 1.13.47l6.14 6.13-4.73 4.73-6.13-6.15zM3.01 3h2v2H3V3h.01z" />
                                     </svg>
-                                     <a href="/tags/android/">android</a> <a href="/tags/kotlin/">kotlin</a>
+                                     <a href="/tags/hugo/">hugo</a>
                                 
                             </div>
 
                             
                             <div class="d-block text-small text-gray">
-                                Created at <time datetime="2019-12-22 03:57" class="no-wrap">
-                                    2019/12/22 03:57</time>
+                                Created at <time datetime="2019-12-17 00:30" class="no-wrap">
+                                    2019/12/17 00:30</time>
+                            
+                                <span class="file-info-divider"></span>
+                                Updated at <time datetime="2019-12-18 01:57" class="no-wrap">
+                                    2019/12/18 01:57</time>
                             
                             </div>
                         </h1>
@@ -131,105 +135,26 @@
                     <div class="Box mt-3 position-relative">
                         <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
                             <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-                                711 Words
+                                32 Words
                                 
                             </div>
 
                             <div class="d-flex py-1 py-md-0 flex-auto flex-order-1 flex-md-order-2 flex-sm-grow-0 flex-justify-between">
                                 <div class="BtnGroup">
                                 
-                                <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="https://github.com/suihan74/hugo_files/commits/master/content/posts/2019/12_22_00.md">History</a>
+                                <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="https://github.com/suihan74/hugo_files/commits/master/content/posts/2019/12_17_00_hello_world.md">History</a>
                                 </div>
                             </div>
                         </div>
 
                         <div id="readme" class="Box-body readme blob instapaper_body js-code-block-container">
-                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><h1 id="heading">問題があったレイアウト例</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-<span style="color:#f92672">&lt;androidx.coordinatorlayout.widget.CoordinatorLayout</span>
-        <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-        <span style="color:#a6e22e">xmlns:app=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
-        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span><span style="color:#f92672">&gt;</span>
-
-    <span style="color:#f92672">&lt;com.google.android.material.appbar.AppBarLayout</span>
-            <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/appbar_layout&#34;</span>
-            <span style="color:#a6e22e">app:elevation=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
-            <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-            <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span><span style="color:#f92672">&gt;</span>
-
-        <span style="color:#f92672">&lt;androidx.appcompat.widget.Toolbar</span>
-                <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/toolbar&#34;</span>
-                <span style="color:#a6e22e">app:layout_scrollFlags=</span><span style="color:#e6db74">&#34;enterAlways|scroll&#34;</span>
-                <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-                <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span><span style="color:#f92672">/&gt;</span>
-
-    <span style="color:#f92672">&lt;/com.google.android.material.appbar.AppBarLayout&gt;</span>
-
-    <span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> メインコンテンツを表示するための領域 </span><span style="color:#75715e">--&gt;</span>
-    <span style="color:#f92672">&lt;FrameLayout</span>
-            <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/main_contents_layout&#34;</span>
-            <span style="color:#a6e22e">app:layout_behavior=</span><span style="color:#e6db74">&#34;com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior&#34;</span>
-            <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-            <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span><span style="color:#f92672">/&gt;</span>
-
-    <span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> メインコンテンツのアイテムを選択したら遷移する追加画面の領域 </span><span style="color:#75715e">--&gt;</span>
-    <span style="color:#f92672">&lt;FrameLayout</span>
-            <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/additional_content_layout&#34;</span>
-            <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-            <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span><span style="color:#f92672">/&gt;</span>
-
-<span style="color:#f92672">&lt;/androidx.coordinatorlayout.widget.CoordinatorLayout&gt;</span>
-</code></pre></div><p><code>main_contents_layout</code>は中身にリストをもつFragmentを表示して、そのスクロールに伴ってツールバーが出たり消えたりする。</p>
-<p><code>additional_contents_layout</code>は最初は何も表示されていないが、<code>main_contents_layout</code>のFragment内でたとえばリストの項目を選択したときなどに追加で表示する。<br>
-ちなみにこれはツールバーを含む画面全体に被さるように表示したいので、<code>app:layout_behavior</code>は設定していない。</p>
-<p>さて、このような条件下で<code>additional_contents_layout</code>にFragment（※以下<code>AdditionalFragment</code>とでもしておく）を表示すると、<code>AdditionalFragment</code>内に配置したRecyclerViewのスクロールにも連動してツールバーが出たり消えたりしてしまい、<br>
-つまり<code>AdditionalFragment</code>の開始前と終了後でツールバーの状態が一致しないということが起こる。</p>
-<p>大した問題ではないが気持ち悪いので、以下のように解決した。</p>
-<h1 id="heading-1">解決後のレイアウト</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-<span style="color:#f92672">&lt;FragmeLayout</span>
-        <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-        <span style="color:#a6e22e">xmlns:app=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
-        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span><span style="color:#f92672">&gt;</span>
-
-    <span style="color:#f92672">&lt;androidx.coordinatorlayout.widget.CoordinatorLayout</span>
-            <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-            <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span><span style="color:#f92672">&gt;</span>
-
-        <span style="color:#f92672">&lt;com.google.android.material.appbar.AppBarLayout</span>
-                <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/appbar_layout&#34;</span>
-                <span style="color:#a6e22e">app:elevation=</span><span style="color:#e6db74">&#34;0dp&#34;</span>
-                <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-                <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span><span style="color:#f92672">&gt;</span>
-
-            <span style="color:#f92672">&lt;androidx.appcompat.widget.Toolbar</span>
-                    <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/toolbar&#34;</span>
-                    <span style="color:#a6e22e">app:layout_scrollFlags=</span><span style="color:#e6db74">&#34;enterAlways|scroll&#34;</span>
-                    <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-                    <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span><span style="color:#f92672">/&gt;</span>
-
-        <span style="color:#f92672">&lt;/com.google.android.material.appbar.AppBarLayout&gt;</span>
-
-        <span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> メインコンテンツを表示するための領域 </span><span style="color:#75715e">--&gt;</span>
-        <span style="color:#f92672">&lt;FrameLayout</span>
-                <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/main_contents_layout&#34;</span>
-                <span style="color:#a6e22e">app:layout_behavior=</span><span style="color:#e6db74">&#34;com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior&#34;</span>
-                <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-                <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span><span style="color:#f92672">/&gt;</span>
-
-    <span style="color:#f92672">&lt;/androidx.coordinatorlayout.widget.CoordinatorLayout&gt;</span>
-
-    <span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> メインコンテンツのアイテムを選択したら遷移する追加画面の領域 </span><span style="color:#75715e">--&gt;</span>
-    <span style="color:#f92672">&lt;FrameLayout</span>
-            <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/additional_content_layout&#34;</span>
-            <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
-            <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span><span style="color:#f92672">/&gt;</span>
-
-<span style="color:#f92672">&lt;/FrameLayout&gt;</span>
-</code></pre></div><p>わざわざ記事に残しておいてなんだが、せやなという感じしかしない。</p>
-</article>
+                            <article class="markdown-body entry-content p-3 p-md-6" itemprop="text"><h1 id="hello-world">hello world</h1>
+<p>ハローワールドではなくハローワークしろ。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Foo</span> {
+    <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">bar</span>() =
+        Log.i(<span style="color:#e6db74">&#34;baz&#34;</span>, <span style="color:#e6db74">&#34;hello world&#34;</span>)
+}
+</code></pre></div></article>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2020 on すいはんぶろぐ.io</title>
+    <link>https://suihan74.github.io/posts/2019/</link>
+    <description>Recent content in 2020 on すいはんぶろぐ.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 29 Dec 2019 03:05:26 +0900</lastBuildDate>
+    
+	<atom:link href="https://suihan74.github.io/posts/2019/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HugoでTwitterの投稿を引用表示するために必要な設定</title>
+      <link>https://suihan74.github.io/posts/2019/12_29_00_twitter_tweet/</link>
+      <pubDate>Sun, 29 Dec 2019 03:05:26 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2019/12_29_00_twitter_tweet/</guid>
+      <description>必要な設定 https://gohugo.io/news/0.60.0-relnotes/
+config.toml に以下を追記する必要がある。
+[markup] [markup.goldmark] [markup.goldmark.renderer] unsafe = true 記事 その上で記事マークダウンの該当箇所では、Twitter公式の「ツイートを埋め込む」から得られた次のようなコードを記述する。
+&amp;lt;blockquote class=&amp;#34;twitter-tweet&amp;#34;&amp;gt;&amp;lt;p lang=&amp;#34;ja&amp;#34; dir=&amp;#34;ltr&amp;#34;&amp;gt;この十年で良かったアニメ10選書こうとして、10個に絞るのも難しいし何度も観て好きなはずなのに感想らしい感想が出てこないのも多くてなんというか何&amp;lt;/p&amp;gt;&amp;amp;mdash; すいはん (@suihan742) &amp;lt;a href=&amp;#34;https://twitter.com/suihan742/status/1210955996861882370?ref_src=twsrc%5Etfw&amp;#34;&amp;gt;December 28, 2019&amp;lt;/a&amp;gt;&amp;lt;/blockquote&amp;gt; &amp;lt;script async src=&amp;#34;https://platform.twitter.com/widgets.js&amp;#34; charset=&amp;#34;utf-8&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 結果 この十年で良かったアニメ10選書こうとして、10個に絞るのも難しいし何度も観て好きなはずなのに感想らしい感想が出てこないのも多くてなんというか何
+&amp;mdash; すいはん (@suihan742) December 28, 2019  </description>
+    </item>
+    
+    <item>
+      <title>2010年代オレ的ベストアニメ10選</title>
+      <link>https://suihan74.github.io/posts/2019/12_27_00_my_favorite_animations/</link>
+      <pubDate>Sun, 29 Dec 2019 02:43:00 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2019/12_27_00_my_favorite_animations/</guid>
+      <description>発端 独断と偏見で選ぶ2010年代ベストアニメ10作 - はてな匿名ダイアリー
+自分だったら何を選ぶだろうかと思ったので、やってみる。
+幸いなことにアニメ視聴記録サービス Annict に生まれてからこれまで観た全てのアニメを記録してあったので、これを元に考えることにする。
+今まで観た全作品
+https://annict.jp/@suihan742/watched
+ベスト10選 候補挙げたら10選どころじゃなくてワロタ。
+好きになる基準に統一感がなくて絞り込むのがなかなか難しかったが、
+主に「映像がすごい」「ストーリー・演出がエモい」の二点で考えることにした。後者に関しては要するに「うまく言えないけどぼくの好み」くらいのふわっとした意味合いに捉えていただければいい。
+改めて考えてみるとOP・EDなどの楽曲に割と評価が引きずられている感じがする。音の力ってすごい。
+この十年で良かったアニメ10選書こうとして、10個に絞るのも難しいし何度も観て好きなはずなのに感想らしい感想が出てこないのも多くてなんというか何
+&amp;mdash; すいはん (@suihan742) December 28, 2019  日本語の勉強をしましょう。
+なお、以下のリストの順序は単純に放映時期順(降順)に記述している。
+ 少女終末旅行 (2017秋) 人類が残り数人みたいなレベルの終末世界を少女二人がケッテンクラートで旅する話。
+絶望と仲良くなってでも人生って良かったよねって言う原作の最後までやってほしかったところはある。
+カナザワからもらったカメラには今までの所有者たちの歴史が詰まっていたということが判明するシーンはとてもエモかった。最後の人類がこの二人でよかった。
+ 終末なにしてますか？ 忙しいですか？ 救ってもらっていいですか？ (2017春) 人類が滅びた後にできたケモ文明を守るため、兵器として戦って死ぬことが決まっている少女がその最期に恋をして救われて死んでいくお話。
+アニメではほぼ上記一点に絞って構成されているので原作の最後までやってないのだが、1クールでとてもよくまとまった話になっていた。
+OPが好きで飛ばせなかった。けどよく考えたら歌詞はメンヘラみたいでなんか怖かった。どうしたらあなたに愛を刻めるんだろう。
+ストーリーの最初と最後に流れるスカボローフェアもよかったですね。
+ 甲鉄城のカバネリ (2016春) 動く美樹本絵。
+澤野BGMがガツンと鳴って生駒が叫ぶみたいな描写割とよくあったけどかっこよい。
+続編の劇場版が公開と同時にプライムで公開されてて頭おかしいとか思ったけどこの続編もまた良かった。
+でも正直なところTVアニメ本編のお話は後半ちょっと微妙だった。それを考慮しても映像や演出はずば抜けていたように思う。
+ 灰と幻想のグリムガル (2016冬) 設定等に真新しさはないものの、「普通の少年少女が異世界に放り込まれて生活しなきゃいけなくなったら」についてのそれらしい生活感というのかリアリティというのかが好みだった。リアルじゃなくてリアリティ。
+独白で人間関係や生活のうまくいかなさをぽつぽつ呟くのがなんか好きだった。
+主人公の少年ハルヒロの声優が細谷佳正さんなんだけども、これを観るまでは「鉄血のオルフェンズ」のオルガとか「ビルドファイターズトライ」のアドウみたいなキャラしか知らなかったのでそういうイメージだったのだが、全く違うハルヒロみたいな少年もやってて幅の広さにすごいってなった。
+ 僕だけがいない街 (2016冬) おれだって小学生から人生やり直したいわちくしょうと強く強く思った。
+全体的にキャラデザインが見やすいというかかわいい感じになっていたのはよかった。
+最終回付近の改変は原作よりコンパクトかつドラマティックになっていたように思う。
+ 牙狼〈GARO〉-炎の刻印- (2014秋) この記事書くときに一番最初に候補に挙げるくらい好き。
+特撮シリーズは特に関係なくハマった（後に特撮シリーズも全部観ることになった）
+劇場版も込みで全体的に戦闘シーンのアニメがすごすぎた。特に1話で焼けてる家が飛んできて突っ込むシーンとか、18話でレオンとアルフォンソが生身で闘うシーンとか、その後守りし者としての戦いを誓ってついに完全な鎧召喚して子供を守るシーンとか。
+特撮初代や「RED REQUIEM」などでもよく描かれるテーマである「親から子へ、過去から未来へ受け継がれ続けていくもの」の描写が強力すぎる。21話で親父と敵対しながら守りし者の生き様を教え込まれた幼少期を思い返すシーンは感動する。
+あとMONACAのBGMすごい。
+ ガンダムビルドファイターズ (2013秋) こういうタッグものはいいですね。とてもいい。製作技術はあるけどバトルで勝てなかったセイが戦闘担当のレイジと共に世界大会を経験して最終回で遂に前に出て1話と同じフィールドでレイジを思わせる動きを見せるシーンとても良い。</description>
+    </item>
+    
+    <item>
+      <title>Hugoテーマのカスタマイズ箇所メモ</title>
+      <link>https://suihan74.github.io/posts/2019/12_26_00_theme_customize/</link>
+      <pubDate>Thu, 26 Dec 2019 01:09:42 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2019/12_26_00_theme_customize/</guid>
+      <description>どこをどう変えたか、どうやって変えたか……etcを忘れそうなので急ぎメモ。
+ベーステーマ github-style
+サンプルページ
+GitHub風……というかCSSとか一部GitHubからそのまま持ってきてる感じのあるテーマ。
+改修点 追記 (2020/01/15 04:20) 1. GitHubのファイル変更履歴へのリンクを追加。 /layouts/partials/post.html 64 65 66 67 68 69  &amp;lt;div class=&amp;#34;d-flex py-1 py-md-0 flex-auto flex-order-1 flex-md-order-2 flex-sm-grow-0 flex-justify-between&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;BtnGroup&amp;#34;&amp;gt; {{ $historyUrl := add (substr (printf &amp;#34;https://github.com/%s/hugo_files/commits/master/content%s&amp;#34; .Site.Params.github .RelPermalink) 0 -1) &amp;#34;.md&amp;#34; }} &amp;lt;a rel=&amp;#34;nofollow&amp;#34; class=&amp;#34;btn btn-sm BtnGroup-item&amp;#34; href=&amp;#34;{{ $historyUrl }}&amp;#34;&amp;gt;History&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;   ファイルパスの取得に.File.Pathを使用すると、ディレクトリの区切り文字がエスケープされてしまってどうしようもなかった。
+.Permalink、.RelPermalinkを使用する場合は何故かエスケープは回避されるようなのでこれで/posts/2019/hoge/みたいな文字列を取得し、最後の/を削って&amp;quot;.md&amp;quot;をくっ付ける力技で(無理矢理)解決。
+2. post.htmlの「投稿日時」「更新日時」を絶対時間で表示するように変更。 ついでに「更新日時」は「投稿日時」と異なる場合のみ表示するようにした。
+/layouts/partials/post.html 37 38 39 40 41 42 43 44 45  &amp;lt;div class=&amp;#34;d-block text-small text-gray&amp;#34;&amp;gt; Created at &amp;lt;time datetime=&amp;#34;{{ .</description>
+    </item>
+    
+    <item>
+      <title>OnBackPressedDispatcherのコールバック追加タイミングに関するTips</title>
+      <link>https://suihan74.github.io/posts/2019/12_23_00_on_back_pressed_dispatcher/</link>
+      <pubDate>Mon, 23 Dec 2019 01:18:10 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2019/12_23_00_on_back_pressed_dispatcher/</guid>
+      <description>おさらい  Fragmentの戻るボタン処理についてのお話。 AppCompatActivity.onBackPressed()をオーバーライドしてごちゃごちゃやるよりはAppCompatActivity.onBackPressedDispatcher.addCallback()を使うのがナウい。 addCallback(owner: lifecycleOwner,...)は最後に追加されたものでかつ有効なものだけが処理される。 AppCompatActivity.onBackPressed()の中でonBackPressedDisptacher.onBackPressed()を呼ぶようになっているので、自前のActivityでオーバーライドした場合その中でsuper.onBackPressed()を呼ばないとコールバックは全て無視される。  問題  addCallback(owner: lifecycleOwner,...)は最後に追加されたものでかつ有効なものだけが処理される。
+  Activity側のonCreate()内でActivityの戻るボタン処理をaddCallback()する。 onCreate()内でFragmentを作成してsupportFragmentManagerにaddする。 Fragment側ではonCreateView()内でFragmentの戻るボタン処理をaddCallback()する。  という3ステップを踏んだ場合、どうも戻るボタンコールバックのスタックに積まれる順番は想定していた 1:Activity → 2:Fragment ではなく、1:Fragment → 2:Activity になる。
+原因 公式リファレンス / OnBackPressedDispatcher には次のように記述がある。
+ Receive callbacks to a new OnBackPressedCallback when the given LifecycleOwner is at least started.
+ onStart()が呼ばれる順番は 1:Activity → 2:Fragment じゃなかったかしらと思ったら、 LifecyclerStateがSTARTEDになるのはonStart()が呼ばれたときではなく抜けたときなのであった。
+ STARTED
+Started state for a LifecycleOwner. For an Activity, this state is reached in two cases:</description>
+    </item>
+    
+    <item>
+      <title>Fragment内のスクロールでActivityのToolbarが動くのを回避する</title>
+      <link>https://suihan74.github.io/posts/2019/12_22_00/</link>
+      <pubDate>Sun, 22 Dec 2019 03:57:59 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2019/12_22_00/</guid>
+      <description>問題があったレイアウト例 &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; xmlns:app=&amp;#34;http://schemas.android.com/apk/res-auto&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;&amp;gt; &amp;lt;com.google.android.material.appbar.AppBarLayout android:id=&amp;#34;@+id/appbar_layout&amp;#34; app:elevation=&amp;#34;0dp&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34;&amp;gt; &amp;lt;androidx.appcompat.widget.Toolbar android:id=&amp;#34;@+id/toolbar&amp;#34; app:layout_scrollFlags=&amp;#34;enterAlways|scroll&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;/com.google.android.material.appbar.AppBarLayout&amp;gt; &amp;lt;!--メインコンテンツを表示するための領域 --&amp;gt; &amp;lt;FrameLayout android:id=&amp;#34;@+id/main_contents_layout&amp;#34; app:layout_behavior=&amp;#34;com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;!--メインコンテンツのアイテムを選択したら遷移する追加画面の領域 --&amp;gt; &amp;lt;FrameLayout android:id=&amp;#34;@+id/additional_content_layout&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;/androidx.coordinatorlayout.widget.CoordinatorLayout&amp;gt; main_contents_layoutは中身にリストをもつFragmentを表示して、そのスクロールに伴ってツールバーが出たり消えたりする。
+additional_contents_layoutは最初は何も表示されていないが、main_contents_layoutのFragment内でたとえばリストの項目を選択したときなどに追加で表示する。
+ちなみにこれはツールバーを含む画面全体に被さるように表示したいので、app:layout_behaviorは設定していない。
+さて、このような条件下でadditional_contents_layoutにFragment（※以下AdditionalFragmentとでもしておく）を表示すると、AdditionalFragment内に配置したRecyclerViewのスクロールにも連動してツールバーが出たり消えたりしてしまい、
+つまりAdditionalFragmentの開始前と終了後でツールバーの状態が一致しないということが起こる。
+大した問題ではないが気持ち悪いので、以下のように解決した。
+解決後のレイアウト &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;FragmeLayout xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; xmlns:app=&amp;#34;http://schemas.android.com/apk/res-auto&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;&amp;gt; &amp;lt;androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;&amp;gt; &amp;lt;com.google.android.material.appbar.AppBarLayout android:id=&amp;#34;@+id/appbar_layout&amp;#34; app:elevation=&amp;#34;0dp&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34;&amp;gt; &amp;lt;androidx.appcompat.widget.Toolbar android:id=&amp;#34;@+id/toolbar&amp;#34; app:layout_scrollFlags=&amp;#34;enterAlways|scroll&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;/com.google.android.material.appbar.AppBarLayout&amp;gt; &amp;lt;!--メインコンテンツを表示するための領域 --&amp;gt; &amp;lt;FrameLayout android:id=&amp;#34;@+id/main_contents_layout&amp;#34; app:layout_behavior=&amp;#34;com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;/androidx.</description>
+    </item>
+    
+    <item>
+      <title>戻るボタンを監視するナウいやつ</title>
+      <link>https://suihan74.github.io/posts/2019/12_20_00/</link>
+      <pubDate>Fri, 20 Dec 2019 03:43:29 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2019/12_20_00/</guid>
+      <description>2019/12/23 追記 OnBackPressedDispatcher.addCallback()を呼ぶタイミングに関する問題があったのでコード例を修正。
+問題に関する詳細は別の記事にまとめた。
+やりたいこと  必要があればFragment側で「戻るボタン」押下を処理する（Activityには処理を伝搬させない） Fragment側で処理する必要がないときはActivityが処理する。  これまで これまで、Fragmentには戻るボタンのリスナが無かったので次のように自分でそれっぽいものを用意する必要があった。
+Fragment用にインターフェースを用意して、
+interface BackPressable { /** 処理した場合はtrueを返す */ fun onBackPressed() : Boolean } ActivityのonBackPressed()メソッドで例えばこんな感じにしていた。
+override fun onBackPressed() { val fragment = supportFragmentManager.findFragmentById(containerId) val handled = if (fragment is BackPressable) { fragment.onBackPressed() } else false if (!handled) { super.onBackPressed() } } これから androidx.fragment:fragment-ktx:1.2.0からは次のようにできる。
+まだ安定版ではなくちょくちょく実装に変更が加えられているようなので、これからまた変わるかもしれない。
+build.gradle
+implementation &amp;#34;androidx.fragment:fragment-ktx:1.2.0-rc04&amp;#34; class HogeActivity : AppCompatActivity() { override fun onCreate(savedInstanceState: Bundle?) { // ~~~ 省略 ~~~  if (savedInstanceState !</description>
+    </item>
+    
+    <item>
+      <title>hello world</title>
+      <link>https://suihan74.github.io/posts/2019/12_17_00_hello_world/</link>
+      <pubDate>Tue, 17 Dec 2019 00:30:02 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2019/12_17_00_hello_world/</guid>
+      <description>hello world ハローワールドではなくハローワークしろ。
+class Foo { fun bar() = Log.i(&amp;#34;baz&amp;#34;, &amp;#34;hello world&amp;#34;) } </description>
+    </item>
+    
+  </channel>
+</rss>

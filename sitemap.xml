@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://suihan74.github.io/posts/2020/</loc>
+    <lastmod>2020-01-15T01:30:40+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://suihan74.github.io/tags/activity/</loc>
     <lastmod>2020-01-15T01:30:40+09:00</lastmod>
   </url>
@@ -15,11 +20,6 @@
   <url>
     <loc>https://suihan74.github.io/tags/kotlin/</loc>
     <lastmod>2020-01-15T01:30:40+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://suihan74.github.io/posts/</loc>
-    <lastmod>2020-01-15T04:20:00+09:00</lastmod>
   </url>
   
   <url>
@@ -118,6 +118,11 @@
   </url>
   
   <url>
+    <loc>https://suihan74.github.io/posts/2019/</loc>
+    <lastmod>2020-01-15T04:20:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://suihan74.github.io/tags/hugo/</loc>
     <lastmod>2020-01-15T04:20:00+09:00</lastmod>
   </url>
@@ -178,7 +183,7 @@
   </url>
   
   <url>
-    <loc>https://suihan74.github.io/posts/2019/first/</loc>
+    <loc>https://suihan74.github.io/posts/2019/12_17_00_hello_world/</loc>
     <lastmod>2019-12-18T01:57:00+09:00</lastmod>
   </url>
   
@@ -196,6 +201,10 @@
   
   <url>
     <loc>https://suihan74.github.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://suihan74.github.io/posts/</loc>
   </url>
   
 </urlset>
