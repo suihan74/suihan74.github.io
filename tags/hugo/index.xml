@@ -34,10 +34,15 @@ config.toml に以下を追記する必要がある。
 ベーステーマ github-style
 サンプルページ
 GitHub風……というかCSSとか一部GitHubからそのまま持ってきてる感じのあるテーマ。
-改修点 追記 (2020/01/15 04:20) 1. GitHubのファイル変更履歴へのリンクを追加。 /layouts/partials/post.html 64 65 66 67 68 69  &amp;lt;div class=&amp;#34;d-flex py-1 py-md-0 flex-auto flex-order-1 flex-md-order-2 flex-sm-grow-0 flex-justify-between&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;BtnGroup&amp;#34;&amp;gt; {{ $historyUrl := add (substr (printf &amp;#34;https://github.com/%s/hugo_files/commits/master/content%s&amp;#34; .Site.Params.github .RelPermalink) 0 -1) &amp;#34;.md&amp;#34; }} &amp;lt;a rel=&amp;#34;nofollow&amp;#34; class=&amp;#34;btn btn-sm BtnGroup-item&amp;#34; href=&amp;#34;{{ $historyUrl }}&amp;#34;&amp;gt;History&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;   ファイルパスの取得に.File.Pathを使用すると、ディレクトリの区切り文字がエスケープされてしまってどうしようもなかった。
+改修点 追記 (2020/01/16 05:00) トップページに草生やした GitHubで何か活動した日には草が生えるやつ。
+ここではとりあえず「記事を新規投稿したらcount+=1」するようにした。
+動的なことはやりたくないので、この草も頑張ってHugoで生成している。(ので、まぁちょっとアレな感じではある)
+■をクリックするとその日に投稿した記事一覧画面に遷移するようにした。
+この画面は一年分の記事を表示する画面をHugoで生成しておいて、表示時に要らない部分をjavascriptで消している。paginatorとの兼ね合いとかに問題がありそうなのでなんとかしたい。
+余裕があれば日毎の記事一覧もなんかこういい感じにトップ画面に表示できるようにしたい。
+ 追記 (2020/01/15 04:20) 1. GitHubのファイル変更履歴へのリンクを追加。 /layouts/partials/post.html 64 65 66 67 68 69  &amp;lt;div class=&amp;#34;d-flex py-1 py-md-0 flex-auto flex-order-1 flex-md-order-2 flex-sm-grow-0 flex-justify-between&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;BtnGroup&amp;#34;&amp;gt; {{ $historyUrl := add (substr (printf &amp;#34;https://github.com/%s/hugo_files/commits/master/content%s&amp;#34; .Site.Params.github .RelPermalink) 0 -1) &amp;#34;.md&amp;#34; }} &amp;lt;a rel=&amp;#34;nofollow&amp;#34; class=&amp;#34;btn btn-sm BtnGroup-item&amp;#34; href=&amp;#34;{{ $historyUrl }}&amp;#34;&amp;gt;History&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;   ファイルパスの取得に.File.Pathを使用すると、ディレクトリの区切り文字がエスケープされてしまってどうしようもなかった。
 .Permalink、.RelPermalinkを使用する場合は何故かエスケープは回避されるようなのでこれで/posts/2019/hoge/みたいな文字列を取得し、最後の/を削って&amp;quot;.md&amp;quot;をくっ付ける力技で(無理矢理)解決。
-2. post.htmlの「投稿日時」「更新日時」を絶対時間で表示するように変更。 ついでに「更新日時」は「投稿日時」と異なる場合のみ表示するようにした。
-/layouts/partials/post.html 37 38 39 40 41 42 43 44 45  &amp;lt;div class=&amp;#34;d-block text-small text-gray&amp;#34;&amp;gt; Created at &amp;lt;time datetime=&amp;#34;{{ .</description>
+2. post.htmlの「投稿日時」「更新日時」を絶対時間で表示するように変更。 ついでに「更新日時」は「投稿日時」と異なる場合のみ表示するようにした。</description>
     </item>
     
     <item>

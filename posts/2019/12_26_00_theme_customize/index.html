@@ -118,8 +118,8 @@
                                     2019/12/26 01:09</time>
                             
                                 <span class="file-info-divider"></span>
-                                Updated at <time datetime="2020-01-15 04:20" class="no-wrap">
-                                    2020/01/15 04:20</time>
+                                Updated at <time datetime="2020-01-16 05:00" class="no-wrap">
+                                    2020/01/16 05:00</time>
                             
                             </div>
                         </h1>
@@ -135,7 +135,7 @@
                     <div class="Box mt-3 position-relative">
                         <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
                             <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-                                2197 Words
+                                2501 Words
                                 
                             </div>
 
@@ -154,6 +154,16 @@
 <p><a href="https://themes.gohugo.io//theme/github-style/">サンプルページ</a></p>
 <p>GitHub風……というかCSSとか一部GitHubからそのまま持ってきてる感じのあるテーマ。</p>
 <h1 id="heading-1">改修点</h1>
+<h2 id="-20200116-0500">追記 (2020/01/16 05:00)</h2>
+<h3 id="heading-2">トップページに草生やした</h3>
+<p><img src="/images/12_26_00_06.png" alt="変更点SS6" title="変更点SS6 - 草"></p>
+<p>GitHubで何か活動した日には草が生えるやつ。<br>
+ここではとりあえず「記事を新規投稿したらcount+=1」するようにした。</p>
+<p>動的なことはやりたくないので、この草も頑張ってHugoで生成している。(ので、まぁちょっとアレな感じではある)</p>
+<p>■をクリックするとその日に投稿した記事一覧画面に遷移するようにした。<br>
+この画面は一年分の記事を表示する画面をHugoで生成しておいて、表示時に要らない部分をjavascriptで消している。paginatorとの兼ね合いとかに問題がありそうなのでなんとかしたい。<br>
+余裕があれば日毎の記事一覧もなんかこういい感じにトップ画面に表示できるようにしたい。</p>
+<hr>
 <h2 id="-20200115-0420">追記 (2020/01/15 04:20)</h2>
 <h3 id="1-github">1. GitHubのファイル変更履歴へのリンクを追加。</h3>
 <p><img src="/images/12_26_00_04.png" alt="変更点SS4" title="変更点SS4 - History"></p>
@@ -225,7 +235,7 @@
 <h2 id="ss">SS</h2>
 <p><img src="/images/12_26_00_01.png" alt="変更点SS1" title="変更点SS1 - Overview画面(大)"></p>
 <p><img src="/images/12_26_00_02.png" alt="変更点SS2" title="変更点SS2 - Post画面 + 画面(小)"></p>
-<h2 id="heading-2">詳細</h2>
+<h2 id="heading-3">詳細</h2>
 <h3 id="1-">1. サイトタイトルを追加</h3>
 <p><a href="https://github.com/suihan74/github-style/blob/master/layouts/partials/header.html">layout/layouts/partials/header.html</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">header</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Header js-details-container Details flex-wrap flex-lg-nowrap p-responsive&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;banner&#34;</span>&gt;
