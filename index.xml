@@ -17,19 +17,7 @@
       <pubDate>Wed, 15 Jan 2020 01:30:40 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2020/01_15_00_app_dialog_theme_click_outside/</guid>
-      <description>追記 (2020-01-17 01:30) 記述例のDialogActivityを表示するためにandroid:themeに設定する値がプロジェクト内で自分で用意したスタイルになっていたので修正。
-修正前: @style/AppDialogTheme
-↓
-修正後: @style/Theme.AppCompat.Dialog
- Activityをダイアログ表示する android:themeに@style/Theme.AppCompat.Dialogを設定したActivityはダイアログとして表示される。(以下DialogActivityと呼称することにする)
-次のはSatenaのブクマ投稿画面を抜粋。
-AndroidManifest.xml 62 63 64 65 66  &amp;lt;activity android:name=&amp;#34;.scenes.post2.BookmarkPostActivity&amp;#34; android:theme=&amp;#34;@style/Theme.AppCompat.Dialog&amp;#34;&amp;gt; ... &amp;lt;/activity&amp;gt;   様子 Activityは最前面にダイアログ表示されている。
-ダイアログ外側をタップで閉じる DialogActivityの外側は暗くなっていて、この部分をタップするとDialogActivityが閉じて、その下に表示されている画面に処理が戻る。
-DialogActivityが何らかの結果を呼び出し元に返すことを期待している場合などに、この「外側タップしてからダイアログが閉じるまでの間」に処理を追加したい、というのが今回の内容である。
-関連記事 結果を返すActivityを呼ぶ
-閉じる前に処理を追加する onTouchEvent(...)はダイアログ外側のタップにも反応する。
-タップされた位置からDialogActivityの外側であることを判別するようにするのが楽そうな解決策だった。
-DialogActivity.kt override fun onTouchEvent(event: MotionEvent?): Boolean { // Activityの外側をタップして閉じる際に、結果を渡しておく  if (event?.action == MotionEvent.ACTION_DOWN &amp;amp;&amp;amp; isOutOfBounds(event)) { val intent = Intent().apply { putExtra(RESULT_HOGE, viewModel.hoge.value) } setResult(RESULT_CANCELED, intent) } return super.onTouchEvent(event) } /** Activityの外側をタップしたかを判別する */ private fun isOutOfBounds(event: MotionEvent): Boolean { val x = event.</description>
+      <description>追記 (2020-01-17 01:30) 記述例のDialogActivityを表示するためにandroid:themeに設定する値がプロジェクト内で自分で用意したスタイルに</description>
     </item>
     
     <item>
@@ -38,40 +26,7 @@ DialogActivity.kt override fun onTouchEvent(event: MotionEvent?): Boolean { // A
       <pubDate>Mon, 13 Jan 2020 13:43:46 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2020/01_13_00_hatena_entry_url/</guid>
-      <description>Twitterをぼんやり眺めていたら、1/8頃からはてブの公式アカウントが共有しているコメントページのURLが変わっていたことに気がついたのでメモ。
-この記事を書いた直前に一応Satenaにも変更を反映してある。
-Satena - はてなブックマーククライアント, はてブビューア
-すいはん無料posted withアプリーチ
- 内容 今現在使用されているコメントページURLは次の3パターン存在することになる。
-パターン2,3は今のところ公式ページでは目にしておらず、SNSに投稿されるリンクに使用されている。
-例としてGoogleのトップページ https://www.google.com/ に対するコメントページのURLを扱う。
-パターン1 https://b.hatena.ne.jp/entry/s/www.google.com/
-要するに、https://b.hatena.ne.jp/entry/ 以下にhttpsなら/s/を加えてスキーム以外の部分を続かせればよい。
-はてブページ内ではこの方式が使用されている。
-パターン2 https://b.hatena.ne.jp/entry/https://www.google.com/
-/entry/以下に対象ページのURLをそのまま突っ込む形。少し前からはてブ公式はこれをTwitterに投稿していた。
-パターン1にリダイレクトされる。
-パターン3 https://b.hatena.ne.jp/entry?url=https%3A%2F%2Fwww.google.com%2F
-今回増えたやつ。クエリパラメータにエンコードした対象ページURLを指定している。
-他にも参照元がtwitterであるとかエントリのカテゴリが何であるかといったパラメータが付いているが別に付けなくてもページは開く。
-パラメータがないなら対象urlも別にエンコードしてなくても開く。
- 正直なんで最初からパターン3じゃないのか謎ではあるが、これに対応させてめでたしめでたし……と思ったら一点問題が。
-コメントページのコメントページはどれを使って取得すればいいのか 結論としては、こちら側で「エントリURL→コメントページURL」の変換をするときはパターン1を使うのが無難という感じ。
-2階より上に行きたい場合は今調べた限りではこれを使う他ない（？）
-○: パターン1を再帰する パターン1にパターン1
-https://b.hatena.ne.jp/entry/s/b.hatena.ne.jp/entry/s/www.google.com/
-○: パターン3にパターン1のURLを渡す パターン3にパターン1
-https://b.hatena.ne.jp/entry?url=https%3A%2F%2Fb.hatena.ne.jp%2Fentry%2Fs%2Fwww.google.com%2F
-×: パターン1にパターン3のURLを渡す パターン1にパターン3
-https://b.hatena.ne.jp/entry/s/b.hatena.ne.jp/entry?url=https%3A%2F%2Fwww.google.com%2F
-×: パターン3にパターン3のURLを渡す 以下のどれも駄目
-  パターン3のエンコードされていない部分をエンコード
-https://b.hatena.ne.jp/entry?url=https%3A%2F%2Fb.hatena.ne.jp%2Fentry%3Furl%3Dhttps%3A%2F%2Fwww.google.com%2F
-  パターン3の全部分をエンコード
-https://b.hatena.ne.jp/entry?url=https%3A%2F%2Fb.hatena.ne.jp%2Fentry%3Furl%3Dhttps%253A%252F%252Fwww.google.com%252F
-  エンコードしない
-https://b.hatena.ne.jp/entry?url=https://b.hatena.ne.jp/entry?url=https://www.google.com/
-   どうでもいいけど「パターン」がゲシュタルト崩壊。</description>
+      <description>Twitterをぼんやり眺めていたら、1/8頃からはてブの公式アカウントが共有しているコメントページのURLが変わっていたことに気がついたの</description>
     </item>
     
     <item>
@@ -80,15 +35,7 @@ https://b.hatena.ne.jp/entry?url=https://b.hatena.ne.jp/entry?url=https://www.go
       <pubDate>Sat, 11 Jan 2020 04:30:41 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2020/01_11_00_hide_bottom_view_on_scroll_behavior/</guid>
-      <description>関連記事 スクロールで画面上下端のツールバーやボタンを表示/非表示
-前提  HideBottomViewOnScrollBehaviorを使用することでコンテンツのスクロールにあわせて画面下部の表示物を表示したり隠したりできる。 protectedメソッドslideDown(child)が呼ばれることで画面下端より下にビューを移動して隠す。slideUp(child)で元の位置に戻して再表示する。  問題 たとえばコンテンツ部分にタブを表示していて、そのコンテンツ部分にはRecyclerViewが配置されているとする。
-移動前のタブでスクロールによって画面下部のビュー(以下BottomView)を隠したあとでタブを移動する。
-もし移動先のタブにスクロールできるものが無かった場合、そのタブを前面に表示している限りはBottomViewを再表示することができなくなってしまう。
-解決方法 タブが変更されたらBottomViewを強制的に再表示するようにする。
-そのためには、HideBottomViewOnScrollBehaviorをオーバーライドしてslideDown(...)、slideUp(...)を外から呼べるようにする必要がある。
-様子 画面下部FAB部分がタブの切り替えと同時に再表示される。
-このFAB部分には以下のExtendedHideBottomViewOnScrollBehavior(相当のもの)をlayoutParams.behaviorに設定している。
-ExtendedHideBottomViewOnScrollBehavior.kt package com.suihan74.utilities import android.content.Context import android.util.AttributeSet import android.view.View import com.google.android.material.behavior.HideBottomViewOnScrollBehavior class ExtendedHideBottomViewOnScrollBehavior&amp;lt;V : View&amp;gt;( context: Context?, attrs: AttributeSet? ) : HideBottomViewOnScrollBehavior&amp;lt;V&amp;gt;(context, attrs) { public override fun slideDown(child: V) { super.slideDown(child) } public override fun slideUp(child: V) { super.slideUp(child) } } HogeActivity.kt ... tab_layout.apply { setupWithViewPager(viewPager) addOnTabSelectedListener(object :TabLayout.OnTabSelectedListener { override fun onTabSelected(tab: TabLayout.Tab?) { // タブを切り替えたらBottomViewを再表示する  showButtons() } override fun onTabUnselected(p0: TabLayout.</description>
+      <description>関連記事 スクロールで画面上下端のツールバーやボタンを表示/非表示 前提 HideBottomViewOnScrollBehaviorを使用するこ</description>
     </item>
     
     <item>
@@ -97,17 +44,7 @@ ExtendedHideBottomViewOnScrollBehavior.kt package com.suihan74.utilities import 
       <pubDate>Thu, 09 Jan 2020 17:08:19 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2020/01_09_00_reflection_invoke_suspend/</guid>
-      <description>プライベートメソッドのテストを書きたいときなどの方法。
-Class.getDeclaredMethod(...)を使ってプライベートメソッドを取得して実行する際に気を付けなければいけないことが通常のメソッドに比して少し増える。
-実行したいメソッド たとえば以下のようなメソッドをリフレクションでぶっこ抜いてきて実行したいとする。
-class Hoge { private suspend fun hoge(foo: Int, bar: String) = withContext(Dispachers.IO) { ... } } メソッドの取得方法 val hogeMethod = Hoge::class.java.getDeclaredMethod( &amp;#34;hoge&amp;#34;, Int::class.java, String::class.java, Continuation::class.java ).apply { isAccessible = true } 引数型の最後にContinuation::class.javaを記述する必要がある。
-取得したメソッドの実行方法 次のような拡張メソッドを用意しておく（とまぁ便利）。
-suspend fun Method.invokeSuspend(obj: Any, vararg args: Any?) : Any? = suspendCoroutineUninterceptedOrReturn { cont -&amp;gt; invoke(obj, *args, cont) } インスタンスと引数を渡して実行する。
-hogeMethod.invokeSuspend(instance, 0, &amp;#34;hoge&amp;#34;) テストでこの処理結果を受けてassertEquals(...)とかしたい場合は、
-runBlockingするなりして終了を待機しておけばいいんだろうか。
-いい感じの方法が他にあれば知りたい。
- 参考
-java - How to run suspend method via reflection?</description>
+      <description>プライベートメソッドのテストを書きたいときなどの方法。 Class.getDeclaredMethod(...)を使ってプライベートメソッドを</description>
     </item>
     
     <item>
@@ -116,18 +53,7 @@ java - How to run suspend method via reflection?</description>
       <pubDate>Tue, 07 Jan 2020 03:02:05 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2020/01_07_00_start_activity_for_result/</guid>
-      <description>Activityから戻ってくる際にその結果を受け取る必要がある場合のやりかた。
-こういうネタ何書いても今さら感しかないわけだけど、しかし作っているもの的にこれまであまり必要なシーンも無かったので、備忘。
-1. 結果を返すActivityの呼び方 startActivity(intent)の代わりにstartActivityForResult(intent: Intent, requestCode: Int)を使用する。
-startActivityForResult(intent, HogeActivity.REQUEST_CODE) requestCodeはInt型だが16bit範囲内の値である必要がある1。
-これを守らないとIllegalArgumentException投げられる。
-定数値以外を使う場合0xffffでマスクするなりしてナントカする。
-Fragmentから呼んで、返ってきた結果をActivityで処理する場合 Fragment.startActivityForResult(...)を使用するとActivity.onActivityResult(...)に渡されるrequestCodeが意図しないものになる。
-以下のどちらかで対応。
- Activityで結果を受け取りたいならactivity?.startActivityForResult(...)とかに書き換える。 Fragment.onActivityResult(...)で受け取る。  2. Activityから結果を返して終了する Activity.finish()を呼ぶ前にresultCodeと結果を返すためのIntentをセットする。
-val intent = Intent().apply { putExtra(RESULT_DATA, result) } setResult(Activity.RESULT_OK, intent) finish() 成功ならActivity.RESULT_OK、失敗ならActivity.RESULT_CANCELEDがあるのでそれを使えばそれで良い気がする。
-何も指定しないとActivity.RESULT_CANCELEDが返ってくるっぽい。
-3. 返ってきた結果を受け取る override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) { super.onActivityResult(requestCode, resultCode, data) when (requestCode) { HogeActivity.REQUEST_CODE -&amp;gt; { when (resultCode) { Activity.RESULT_OK -&amp;gt; { val result = data?.getSerializableExtra(HogeActivity.RESULT_DATA) as? HogeResult ... } Activity.</description>
+      <description>Activityから戻ってくる際にその結果を受け取る必要がある場合のやりかた。 こういうネタ何書いても今さら感しかないわけだけど、しかし作って</description>
     </item>
     
     <item>
@@ -136,12 +62,7 @@ val intent = Intent().apply { putExtra(RESULT_DATA, result) } setResult(Activity
       <pubDate>Mon, 06 Jan 2020 02:49:08 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2020/01_06_01_selectable_textview/</guid>
-      <description>問題 以下の条件のTextViewを用意する。
- movementMethodにLinkMovementMethodを設定する。 android:textIsSelectable=&amp;quot;true&amp;quot;を設定する。  そして以下の手順で操作を行うと、アプリがクラッシュする。
- 該当TextViewの文字列を選択する。 TextView上の適当な領域をタップして文字列選択を解除する。 破滅する。  ちなみに、
-LinkMovementMethodのreturn super.onTouchEvent(...)の部分にブレークポイントを置いてから文字列選択解除すると発生しなくてなんやねんってなった。
-また、解除時のタップは単押し長押しに関わらずとにかくMotionEvent.ACTION_DOWNがきた時点で駄目っぽかった。
-様子 ログ java.lang.IllegalArgumentException: Invalid offset: -1. Valid range is [0, 16] at android.text.method.WordIterator.checkOffsetIsValid(WordIterator.java:380) at android.text.method.WordIterator.isBoundary(WordIterator.java:101) at android.widget.Editor$SelectionStartHandleView.positionAtCursorOffset(Editor.java:4260) at android.widget.Editor$HandleView.updatePosition(Editor.java:3708) at android.widget.Editor$PositionListener.onPreDraw(Editor.java:2507) at android.view.ViewTreeObserver.dispatchOnPreDraw(ViewTreeObserver.java:944) at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:2055) at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:1107) at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:6013) at android.view.Choreographer$CallbackRecord.run(Choreographer.java:858) at android.view.Choreographer.doCallbacks(Choreographer.java:670) at android.view.Choreographer.doFrame(Choreographer.java:606) at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:844) at android.os.Handler.handleCallback(Handler.java:739) at android.os.Handler.dispatchMessage(Handler.java:95) at android.os.Looper.loop(Looper.java:148) at android.app.ActivityThread.main(ActivityThread.java:5417) at java.lang.reflect.Method.invoke(Native Method) at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726) at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616) 「オフセット: -1を選択しようとしてますね」じゃねぇんじゃ。</description>
+      <description>問題 以下の条件のTextViewを用意する。 movementMethodにLinkMovementMethodを設定する。 android:t</description>
     </item>
     
     <item>
@@ -150,10 +71,7 @@ LinkMovementMethodのreturn super.onTouchEvent(...)の部分にブレークポ�
       <pubDate>Mon, 06 Jan 2020 00:18:01 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2020/01_06_00_marquee_toolbar/</guid>
-      <description>やりたいこと こういうの。
-ツールバーのtitle部分の文字列が横に流れ続けている。
-カスタムビューの作成 Toolbarを継承した次のようなカスタムビューを作成する。
-MarqueeToolbar.kt package com.suihan74.utilities import android.content.Context import android.text.TextUtils import android.util.AttributeSet import android.widget.TextView import androidx.appcompat.widget.Toolbar class MarqueeToolbar : Toolbar { constructor(context: Context, attributeSet: AttributeSet? = null) : super(context, attributeSet) constructor(context: Context, attributeSet: AttributeSet?, defStyleAttr: Int) : super(context, attributeSet, defStyleAttr) /** タイトルの設定が完了しているか否か */ private var reflected: Boolean = false /** タイトル部分のTextView */ private var titleTextView: TextView? = null override fun setTitle(resId: Int) { if (!reflected) { reflected = reflectTitle() } super.</description>
+      <description>やりたいこと こういうの。 ツールバーのtitle部分の文字列が横に流れ続けている。 カスタムビューの作成 Toolbarを継承した次のようなカスタ</description>
     </item>
     
     <item>
@@ -162,23 +80,7 @@ MarqueeToolbar.kt package com.suihan74.utilities import android.content.Context 
       <pubDate>Fri, 03 Jan 2020 00:12:34 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2020/01_02_02_show_views_with_scrolling/</guid>
-      <description>やること こういうやつ。
-画面中央のRecyclerViewのスクロールに合わせて、画面上端のToolbarが上に向かって隠れ、画面下端のFloatingActionButton(を複数持ったFragment)が下に向かって隠れている。
-レイアウトで指定する場合 レイアウト側で設定する場合は以下のようにする。
-Satenaで実際に使っているレイアウトファイルだが、必要な部分だけ適当に抜粋した。
-&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; xmlns:app=&amp;#34;http://schemas.android.com/apk/res-auto&amp;#34; android:background=&amp;#34;?attr/panelBackground&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;&amp;gt; &amp;lt;com.google.android.material.appbar.AppBarLayout android:id=&amp;#34;@+id/appbar_layout&amp;#34; app:elevation=&amp;#34;0dp&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34;&amp;gt; &amp;lt;androidx.appcompat.widget.Toolbar android:id=&amp;#34;@+id/toolbar&amp;#34; app:layout_scrollFlags=&amp;#34;enterAlways|scroll&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;/com.google.android.material.appbar.AppBarLayout&amp;gt; &amp;lt;!--ブクマリストを表示するための領域 --&amp;gt; &amp;lt;FrameLayout android:id=&amp;#34;@+id/content_layout&amp;#34; app:layout_behavior=&amp;#34;com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;!--ブクマリスト用下部ボタンを表示するための領域 --&amp;gt; &amp;lt;FrameLayout android:id=&amp;#34;@+id/buttons_layout&amp;#34; app:layout_behavior=&amp;#34;com.google.android.material.behavior.HideBottomViewOnScrollBehavior&amp;#34; android:layout_gravity=&amp;#34;bottom&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34;/&amp;gt; &amp;lt;/androidx.coordinatorlayout.widget.CoordinatorLayout&amp;gt; FrameLayout部分にそれぞれコンテンツ内容にあたるFragmentがreplaceされる。
-@id/content_layoutには主にRecyclerViewが配置されたフラグメントを複数タブとして持つフラグメントが置かれ、
-@id/buttons_layoutにはFloatingActionButtonが配置されている。
-ちなみに、AppBarLayoutにapp:elevation=&amp;quot;0dp&amp;quot;が設定されているのは、こうすることで@id/content_layoutのフラグメントがもつTabLayoutとの間に不要な影が描画されなくなるため。
-トリガー スクロールを監視して他のViewを隠すトリガーにしたい対象(@id/content_layoutがそれにあたる)には、
-app:layout_behavior=&amp;#34;com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior&amp;#34; を設定する。
-ツールバー AppBarLayout内のViewをスクロールに合わせて画面上部に隠すには、
-app:layout_scrollFlags=&amp;#34;enterAlways|scroll&amp;#34; とか設定する。app:layout_scrollFlagsの値による差異については以下などを見ればいいように思う。
-Android Design — Collapsing Toolbar: ScrollFlags Illustrated
-ボトムナビゲーション HideBottomViewOnScrollBehaviorというまんまな名前のBehaviorがあるのでこれを設定すると、スクロールに合わせて画面下部に向かってViewが隠れる。
-app:layout_behavior=&amp;#34;com.google.android.material.behavior.HideBottomViewOnScrollBehavior&amp;#34; コードで指定する場合 設定値にあわせて表示切替をしたりしなかったりを動的に設定したい場合など、DataBindingとかしようと思わないならActivityなり何なりにkotlin側で記述することもできる。
-次の例では、(少し手を加えた)SharedPreferencesの設定値によって画面上下端のViewの表示切替をするかしないかをコード側で設定している。
-// スクロールでツールバーを隠す toolbar.updateLayoutParams&amp;lt;AppBarLayout.LayoutParams&amp;gt; { scrollFlags = if (prefs.</description>
+      <description>やること こういうやつ。 画面中央のRecyclerViewのスクロールに合わせて、画面上端のToolbarが上に向かって隠れ、画面下端のFlo</description>
     </item>
     
     <item>
@@ -187,17 +89,7 @@ app:layout_behavior=&amp;#34;com.google.android.material.behavior.HideBottomView
       <pubDate>Thu, 02 Jan 2020 22:15:23 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2020/01_02_01_androidx_alert_dialog/</guid>
-      <description>android:接頭辞のつく属性はサポートライブラリのスタイルには使わない。
-以上。
-発生した問題   AlertDialogを使うときに、うっかりandroidx.appcompat.app.AlertDialogとandroid.app.AlertDialogを混在させていた。
-  そのどちらでも共通のスタイルを使用していた。
-  アプリで使用するダイアログで下部ボタン（Positive, Negative, Neutral）の色がちゃんとスタイル適用されるものとされないものがあった。
-  原因  注: サポート ライブラリの属性名は、android: 接頭辞を使用しません。これは Android フレームワークの属性にのみ使用します。
- スタイルとテーマ | Android Developers
-はい切腹しますありがとうございました。
-修正   すべてのAlertDialogインポート部分をandroidx.appcompat.app.AlertDialogに統一。
-  ボタンスタイルを次のように指定。
-  &amp;lt;item name=&amp;#34;buttonBarPositiveButtonStyle&amp;#34;&amp;gt;@style/PositiveButtonStyle&amp;lt;/item&amp;gt; &amp;lt;item name=&amp;#34;buttonBarNegativeButtonStyle&amp;#34;&amp;gt;@style/NegativeButtonStyle&amp;lt;/item&amp;gt; &amp;lt;item name=&amp;#34;buttonBarNeutralButtonStyle&amp;#34;&amp;gt;@style/NeutralButtonStyle&amp;lt;/item&amp;gt; </description>
+      <description>android:接頭辞のつく属性はサポートライブラリのスタイルには使わない。 以上。 発生した問題 AlertDialogを使うときに、うっかりa</description>
     </item>
     
     <item>
@@ -206,15 +98,7 @@ app:layout_behavior=&amp;#34;com.google.android.material.behavior.HideBottomView
       <pubDate>Thu, 02 Jan 2020 17:04:24 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2020/01_02_00_beginning_of_data_binding/</guid>
-      <description>最近ずっとSatenaのActivity/Fragmentのコード側を作り直す作業をしていて、ViewModel + LiveDataは割と活用してきて&amp;quot;前よりは&amp;quot;いい感じになってきているのだが、
-DataBindingに関しては以前UWPアプリ作るとき（中途半端に）触れて以来、MVVMというかデータバインディングやったらやったでそれはそれで色々と面倒なことがあるイメージがあったので積極的に取り入れてなかったのだけど、楽できそうな部分ではやっていこうかと唐突に思った。
-今さら感強い上にまだ詳しく使い込んでいないので、
-とりあえず導入的なものと、
-主に忘れそうな部分についていくつかメモを書く。
-導入 build.gradle (app) ViewModelやらDataBindingを使用するのに必要な設定・依存関係を追加する。
-android { ... // DataBinding利用に必要  dataBinding { enabled = true } ... } dependencies { ... // ViewModel and LiveData  def lifecycle_version = &amp;#34;2.1.0&amp;#34; implementation &amp;#34;androidx.lifecycle:lifecycle-extensions:$lifecycle_version&amp;#34; implementation &amp;#34;androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version&amp;#34; implementation &amp;#34;androidx.lifecycle:lifecycle-common-java8:$lifecycle_version&amp;#34; testImplementation &amp;#34;androidx.arch.core:core-testing:$lifecycle_version&amp;#34; ... } activity_hoge.xml 以前のレイアウトの内容を&amp;lt;layout&amp;gt;で囲い、&amp;lt;data&amp;gt; ~ &amp;lt;/data&amp;gt;にバインドに必要な情報を記述する。
-ここでは、コード側で用意してバインドするViewModelのオブジェクトをレイアウトファイル内ではvmとして扱う。
-&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;layout xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34;&amp;gt; &amp;lt;!--bindするデータ --&amp;gt; &amp;lt;data&amp;gt; &amp;lt;variable name=&amp;#34;vm&amp;#34; type=&amp;#34;com.suihan74.hoge.HogeViewModel&amp;#34; /&amp;gt; &amp;lt;/data&amp;gt; &amp;lt;!--以下表示部分 --&amp;gt; &amp;lt;androidx.coordinatorlayout.widget.CoordinatorLayout android:id=&amp;#34;@+id/hoge_layout&amp;#34; android:background=&amp;#34;?attr/panelBackground&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34;&amp;gt; .</description>
+      <description>最近ずっとSatenaのActivity/Fragmentのコード側を作り直す作業をしていて、ViewModel + LiveDataは割と活用</description>
     </item>
     
     <item>
@@ -223,11 +107,7 @@ android { ... // DataBinding利用に必要  dataBinding { enabled = true } ... 
       <pubDate>Sun, 29 Dec 2019 03:05:26 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2019/12_29_00_twitter_tweet/</guid>
-      <description>必要な設定 https://gohugo.io/news/0.60.0-relnotes/
-config.toml に以下を追記する必要がある。
-[markup] [markup.goldmark] [markup.goldmark.renderer] unsafe = true 記事 その上で記事マークダウンの該当箇所では、Twitter公式の「ツイートを埋め込む」から得られた次のようなコードを記述する。
-&amp;lt;blockquote class=&amp;#34;twitter-tweet&amp;#34;&amp;gt;&amp;lt;p lang=&amp;#34;ja&amp;#34; dir=&amp;#34;ltr&amp;#34;&amp;gt;この十年で良かったアニメ10選書こうとして、10個に絞るのも難しいし何度も観て好きなはずなのに感想らしい感想が出てこないのも多くてなんというか何&amp;lt;/p&amp;gt;&amp;amp;mdash; すいはん (@suihan742) &amp;lt;a href=&amp;#34;https://twitter.com/suihan742/status/1210955996861882370?ref_src=twsrc%5Etfw&amp;#34;&amp;gt;December 28, 2019&amp;lt;/a&amp;gt;&amp;lt;/blockquote&amp;gt; &amp;lt;script async src=&amp;#34;https://platform.twitter.com/widgets.js&amp;#34; charset=&amp;#34;utf-8&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 結果 この十年で良かったアニメ10選書こうとして、10個に絞るのも難しいし何度も観て好きなはずなのに感想らしい感想が出てこないのも多くてなんというか何
-&amp;mdash; すいはん (@suihan742) December 28, 2019  </description>
+      <description>必要な設定 https://gohugo.io/news/0.60.0-relnotes/ config.toml に以下を追記する必要がある。 [markup] [markup.goldmark] [markup.goldmark.renderer] unsafe = true 記事 その上で記事マークダウンの該当箇所では、Twitter公式の「ツイートを埋め込む」</description>
     </item>
     
     <item>
@@ -236,41 +116,7 @@ config.toml に以下を追記する必要がある。
       <pubDate>Sun, 29 Dec 2019 02:43:00 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2019/12_27_00_my_favorite_animations/</guid>
-      <description>発端 独断と偏見で選ぶ2010年代ベストアニメ10作 - はてな匿名ダイアリー
-自分だったら何を選ぶだろうかと思ったので、やってみる。
-幸いなことにアニメ視聴記録サービス Annict に生まれてからこれまで観た全てのアニメを記録してあったので、これを元に考えることにする。
-今まで観た全作品
-https://annict.jp/@suihan742/watched
-ベスト10選 候補挙げたら10選どころじゃなくてワロタ。
-好きになる基準に統一感がなくて絞り込むのがなかなか難しかったが、
-主に「映像がすごい」「ストーリー・演出がエモい」の二点で考えることにした。後者に関しては要するに「うまく言えないけどぼくの好み」くらいのふわっとした意味合いに捉えていただければいい。
-改めて考えてみるとOP・EDなどの楽曲に割と評価が引きずられている感じがする。音の力ってすごい。
-この十年で良かったアニメ10選書こうとして、10個に絞るのも難しいし何度も観て好きなはずなのに感想らしい感想が出てこないのも多くてなんというか何
-&amp;mdash; すいはん (@suihan742) December 28, 2019  日本語の勉強をしましょう。
-なお、以下のリストの順序は単純に放映時期順(降順)に記述している。
- 少女終末旅行 (2017秋) 人類が残り数人みたいなレベルの終末世界を少女二人がケッテンクラートで旅する話。
-絶望と仲良くなってでも人生って良かったよねって言う原作の最後までやってほしかったところはある。
-カナザワからもらったカメラには今までの所有者たちの歴史が詰まっていたということが判明するシーンはとてもエモかった。最後の人類がこの二人でよかった。
- 終末なにしてますか？ 忙しいですか？ 救ってもらっていいですか？ (2017春) 人類が滅びた後にできたケモ文明を守るため、兵器として戦って死ぬことが決まっている少女がその最期に恋をして救われて死んでいくお話。
-アニメではほぼ上記一点に絞って構成されているので原作の最後までやってないのだが、1クールでとてもよくまとまった話になっていた。
-OPが好きで飛ばせなかった。けどよく考えたら歌詞はメンヘラみたいでなんか怖かった。どうしたらあなたに愛を刻めるんだろう。
-ストーリーの最初と最後に流れるスカボローフェアもよかったですね。
- 甲鉄城のカバネリ (2016春) 動く美樹本絵。
-澤野BGMがガツンと鳴って生駒が叫ぶみたいな描写割とよくあったけどかっこよい。
-続編の劇場版が公開と同時にプライムで公開されてて頭おかしいとか思ったけどこの続編もまた良かった。
-でも正直なところTVアニメ本編のお話は後半ちょっと微妙だった。それを考慮しても映像や演出はずば抜けていたように思う。
- 灰と幻想のグリムガル (2016冬) 設定等に真新しさはないものの、「普通の少年少女が異世界に放り込まれて生活しなきゃいけなくなったら」についてのそれらしい生活感というのかリアリティというのかが好みだった。リアルじゃなくてリアリティ。
-独白で人間関係や生活のうまくいかなさをぽつぽつ呟くのがなんか好きだった。
-主人公の少年ハルヒロの声優が細谷佳正さんなんだけども、これを観るまでは「鉄血のオルフェンズ」のオルガとか「ビルドファイターズトライ」のアドウみたいなキャラしか知らなかったのでそういうイメージだったのだが、全く違うハルヒロみたいな少年もやってて幅の広さにすごいってなった。
- 僕だけがいない街 (2016冬) おれだって小学生から人生やり直したいわちくしょうと強く強く思った。
-全体的にキャラデザインが見やすいというかかわいい感じになっていたのはよかった。
-最終回付近の改変は原作よりコンパクトかつドラマティックになっていたように思う。
- 牙狼〈GARO〉-炎の刻印- (2014秋) この記事書くときに一番最初に候補に挙げるくらい好き。
-特撮シリーズは特に関係なくハマった（後に特撮シリーズも全部観ることになった）
-劇場版も込みで全体的に戦闘シーンのアニメがすごすぎた。特に1話で焼けてる家が飛んできて突っ込むシーンとか、18話でレオンとアルフォンソが生身で闘うシーンとか、その後守りし者としての戦いを誓ってついに完全な鎧召喚して子供を守るシーンとか。
-特撮初代や「RED REQUIEM」などでもよく描かれるテーマである「親から子へ、過去から未来へ受け継がれ続けていくもの」の描写が強力すぎる。21話で親父と敵対しながら守りし者の生き様を教え込まれた幼少期を思い返すシーンは感動する。
-あとMONACAのBGMすごい。
- ガンダムビルドファイターズ (2013秋) こういうタッグものはいいですね。とてもいい。製作技術はあるけどバトルで勝てなかったセイが戦闘担当のレイジと共に世界大会を経験して最終回で遂に前に出て1話と同じフィールドでレイジを思わせる動きを見せるシーンとても良い。</description>
+      <description>発端 独断と偏見で選ぶ2010年代ベストアニメ10作 - はてな匿名ダイアリー 自分だったら何を選ぶだろうかと思ったので、やってみる。 幸いなことにア</description>
     </item>
     
     <item>
@@ -279,19 +125,7 @@ OPが好きで飛ばせなかった。けどよく考えたら歌詞はメンヘ
       <pubDate>Thu, 26 Dec 2019 01:09:42 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2019/12_26_00_theme_customize/</guid>
-      <description>どこをどう変えたか、どうやって変えたか……etcを忘れそうなので急ぎメモ。
-ベーステーマ github-style
-サンプルページ
-GitHub風……というかCSSとか一部GitHubからそのまま持ってきてる感じのあるテーマ。
-改修点 追記 (2020/01/16 05:00) トップページに草生やした GitHubで何か活動した日には草が生えるやつ。
-ここではとりあえず「記事を新規投稿したらcount+=1」するようにした。
-動的なことはやりたくないので、この草も頑張ってHugoで生成している。(ので、まぁちょっとアレな感じではある)
-■をクリックするとその日に投稿した記事一覧画面に遷移するようにした。
-この画面は一年分の記事を表示する画面をHugoで生成しておいて、表示時に要らない部分をjavascriptで消している。paginatorとの兼ね合いとかに問題がありそうなのでなんとかしたい。
-余裕があれば日毎の記事一覧もなんかこういい感じにトップ画面に表示できるようにしたい。
- 追記 (2020/01/15 04:20) 1. GitHubのファイル変更履歴へのリンクを追加。 /layouts/partials/post.html 64 65 66 67 68 69  &amp;lt;div class=&amp;#34;d-flex py-1 py-md-0 flex-auto flex-order-1 flex-md-order-2 flex-sm-grow-0 flex-justify-between&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;BtnGroup&amp;#34;&amp;gt; {{ $historyUrl := add (substr (printf &amp;#34;https://github.com/%s/hugo_files/commits/master/content%s&amp;#34; .Site.Params.github .RelPermalink) 0 -1) &amp;#34;.md&amp;#34; }} &amp;lt;a rel=&amp;#34;nofollow&amp;#34; class=&amp;#34;btn btn-sm BtnGroup-item&amp;#34; href=&amp;#34;{{ $historyUrl }}&amp;#34;&amp;gt;History&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;   ファイルパスの取得に.File.Pathを使用すると、ディレクトリの区切り文字がエスケープされてしまってどうしようもなかった。
-.Permalink、.RelPermalinkを使用する場合は何故かエスケープは回避されるようなのでこれで/posts/2019/hoge/みたいな文字列を取得し、最後の/を削って&amp;quot;.md&amp;quot;をくっ付ける力技で(無理矢理)解決。
-2. post.htmlの「投稿日時」「更新日時」を絶対時間で表示するように変更。 ついでに「更新日時」は「投稿日時」と異なる場合のみ表示するようにした。</description>
+      <description>どこをどう変えたか、どうやって変えたか……etcを忘れそうなので急ぎメモ。 ベーステーマ github-style サンプルページ GitHub風……というかCSSとか一</description>
     </item>
     
     <item>
@@ -300,13 +134,7 @@ GitHub風……というかCSSとか一部GitHubからそのまま持ってき�
       <pubDate>Mon, 23 Dec 2019 01:18:10 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2019/12_23_00_on_back_pressed_dispatcher/</guid>
-      <description>おさらい  Fragmentの戻るボタン処理についてのお話。 AppCompatActivity.onBackPressed()をオーバーライドしてごちゃごちゃやるよりはAppCompatActivity.onBackPressedDispatcher.addCallback()を使うのがナウい。 addCallback(owner: lifecycleOwner,...)は最後に追加されたものでかつ有効なものだけが処理される。 AppCompatActivity.onBackPressed()の中でonBackPressedDisptacher.onBackPressed()を呼ぶようになっているので、自前のActivityでオーバーライドした場合その中でsuper.onBackPressed()を呼ばないとコールバックは全て無視される。  問題  addCallback(owner: lifecycleOwner,...)は最後に追加されたものでかつ有効なものだけが処理される。
-  Activity側のonCreate()内でActivityの戻るボタン処理をaddCallback()する。 onCreate()内でFragmentを作成してsupportFragmentManagerにaddする。 Fragment側ではonCreateView()内でFragmentの戻るボタン処理をaddCallback()する。  という3ステップを踏んだ場合、どうも戻るボタンコールバックのスタックに積まれる順番は想定していた 1:Activity → 2:Fragment ではなく、1:Fragment → 2:Activity になる。
-原因 公式リファレンス / OnBackPressedDispatcher には次のように記述がある。
- Receive callbacks to a new OnBackPressedCallback when the given LifecycleOwner is at least started.
- onStart()が呼ばれる順番は 1:Activity → 2:Fragment じゃなかったかしらと思ったら、 LifecyclerStateがSTARTEDになるのはonStart()が呼ばれたときではなく抜けたときなのであった。
- STARTED
-Started state for a LifecycleOwner. For an Activity, this state is reached in two cases:</description>
+      <description>おさらい Fragmentの戻るボタン処理についてのお話。 AppCompatActivity.onBackPressed()をオーバーライドし</description>
     </item>
     
     <item>
@@ -315,13 +143,7 @@ Started state for a LifecycleOwner. For an Activity, this state is reached in tw
       <pubDate>Sun, 22 Dec 2019 03:57:59 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2019/12_22_00/</guid>
-      <description>問題があったレイアウト例 &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; xmlns:app=&amp;#34;http://schemas.android.com/apk/res-auto&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;&amp;gt; &amp;lt;com.google.android.material.appbar.AppBarLayout android:id=&amp;#34;@+id/appbar_layout&amp;#34; app:elevation=&amp;#34;0dp&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34;&amp;gt; &amp;lt;androidx.appcompat.widget.Toolbar android:id=&amp;#34;@+id/toolbar&amp;#34; app:layout_scrollFlags=&amp;#34;enterAlways|scroll&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;/com.google.android.material.appbar.AppBarLayout&amp;gt; &amp;lt;!--メインコンテンツを表示するための領域 --&amp;gt; &amp;lt;FrameLayout android:id=&amp;#34;@+id/main_contents_layout&amp;#34; app:layout_behavior=&amp;#34;com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;!--メインコンテンツのアイテムを選択したら遷移する追加画面の領域 --&amp;gt; &amp;lt;FrameLayout android:id=&amp;#34;@+id/additional_content_layout&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;/androidx.coordinatorlayout.widget.CoordinatorLayout&amp;gt; main_contents_layoutは中身にリストをもつFragmentを表示して、そのスクロールに伴ってツールバーが出たり消えたりする。
-additional_contents_layoutは最初は何も表示されていないが、main_contents_layoutのFragment内でたとえばリストの項目を選択したときなどに追加で表示する。
-ちなみにこれはツールバーを含む画面全体に被さるように表示したいので、app:layout_behaviorは設定していない。
-さて、このような条件下でadditional_contents_layoutにFragment（※以下AdditionalFragmentとでもしておく）を表示すると、AdditionalFragment内に配置したRecyclerViewのスクロールにも連動してツールバーが出たり消えたりしてしまい、
-つまりAdditionalFragmentの開始前と終了後でツールバーの状態が一致しないということが起こる。
-大した問題ではないが気持ち悪いので、以下のように解決した。
-解決後のレイアウト &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;FragmeLayout xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; xmlns:app=&amp;#34;http://schemas.android.com/apk/res-auto&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;&amp;gt; &amp;lt;androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;&amp;gt; &amp;lt;com.google.android.material.appbar.AppBarLayout android:id=&amp;#34;@+id/appbar_layout&amp;#34; app:elevation=&amp;#34;0dp&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34;&amp;gt; &amp;lt;androidx.appcompat.widget.Toolbar android:id=&amp;#34;@+id/toolbar&amp;#34; app:layout_scrollFlags=&amp;#34;enterAlways|scroll&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;/com.google.android.material.appbar.AppBarLayout&amp;gt; &amp;lt;!--メインコンテンツを表示するための領域 --&amp;gt; &amp;lt;FrameLayout android:id=&amp;#34;@+id/main_contents_layout&amp;#34; app:layout_behavior=&amp;#34;com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;/androidx.</description>
+      <description>問題があったレイアウト例 &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; xmlns:app=&amp;#34;http://schemas.android.com/apk/res-auto&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;&amp;gt; &amp;lt;com.google.android.material.appbar.AppBarLayout android:id=&amp;#34;@+id/appbar_layout&amp;#34; app:elevation=&amp;#34;0dp&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34;&amp;gt; &amp;lt;androidx.appcompat.widget.Toolbar android:id=&amp;#34;@+id/toolbar&amp;#34; app:layout_scrollFlags=&amp;#34;enterAlways|scroll&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;/com.google.android.material.appbar.AppBarLayout&amp;gt; &amp;lt;!--メインコンテンツを表示するための領域 --&amp;gt; &amp;lt;FrameLayout android:id=&amp;#34;@+id/main_contents_layout&amp;#34; app:layout_behavior=&amp;#34;com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34;/&amp;gt; &amp;lt;!--メ</description>
     </item>
     
     <item>
@@ -330,15 +152,7 @@ additional_contents_layoutは最初は何も表示されていないが、main_c
       <pubDate>Fri, 20 Dec 2019 03:43:29 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2019/12_20_00/</guid>
-      <description>2019/12/23 追記 OnBackPressedDispatcher.addCallback()を呼ぶタイミングに関する問題があったのでコード例を修正。
-問題に関する詳細は別の記事にまとめた。
-やりたいこと  必要があればFragment側で「戻るボタン」押下を処理する（Activityには処理を伝搬させない） Fragment側で処理する必要がないときはActivityが処理する。  これまで これまで、Fragmentには戻るボタンのリスナが無かったので次のように自分でそれっぽいものを用意する必要があった。
-Fragment用にインターフェースを用意して、
-interface BackPressable { /** 処理した場合はtrueを返す */ fun onBackPressed() : Boolean } ActivityのonBackPressed()メソッドで例えばこんな感じにしていた。
-override fun onBackPressed() { val fragment = supportFragmentManager.findFragmentById(containerId) val handled = if (fragment is BackPressable) { fragment.onBackPressed() } else false if (!handled) { super.onBackPressed() } } これから androidx.fragment:fragment-ktx:1.2.0からは次のようにできる。
-まだ安定版ではなくちょくちょく実装に変更が加えられているようなので、これからまた変わるかもしれない。
-build.gradle
-implementation &amp;#34;androidx.fragment:fragment-ktx:1.2.0-rc04&amp;#34; class HogeActivity : AppCompatActivity() { override fun onCreate(savedInstanceState: Bundle?) { // ~~~ 省略 ~~~  if (savedInstanceState !</description>
+      <description>2019/12/23 追記 OnBackPressedDispatcher.addCallback()を呼ぶタイミングに関する問題があったのでコード例を修正。 問題</description>
     </item>
     
     <item>
@@ -347,8 +161,7 @@ implementation &amp;#34;androidx.fragment:fragment-ktx:1.2.0-rc04&amp;#34; class
       <pubDate>Tue, 17 Dec 2019 00:38:06 +0900</pubDate>
       
       <guid>https://suihan74.github.io/about/</guid>
-      <description>Profile About  すいはん 1992/12/06 神奈川県横浜市 在住 e-mail -&amp;gt; suihan742@gmail.com Github -&amp;gt; https://github.com/suihan74 blog -&amp;gt; https://suihan74.orz.hm/blog/ Twitter -&amp;gt; https://twitter.com/suihan742  資格  基本情報技術者試験 合格 (2015秋期)  言語  C (ANSI-C, C99) C++ (C++03, C++11, C++14) C# (7.0 ~ 7.3) Java (7, 8) Kotlin (1.3) Lua (5.1, 5.2, 5.3) HTML, CSS, JavaScript  いずれも独学，個人開発での経験
-アプリ開発  Androidアプリの開発 (Kotlin, XML)  はてなブックマーク閲覧/投稿アプリ (2019)  Playストアで公開 -&amp;gt; https://play.google.com/store/apps/details?id=com.suihan74.satena Github: https://github.com/suihan74/Satena   カメラとOCRを用いたテキスト入力マッシュルームアプリ (2019-)  Github: https://github.</description>
+      <description>Profile About すいはん 1992/12/06 神奈川県横浜市 在住 e-mail -&amp;gt; suihan742@gmail.com Github -&amp;gt; https://github.com/suihan74 blog -&amp;gt; https://suihan74.orz.hm/blog/ Twitter -&amp;gt; https://twitter.com/suihan742 資格 基本情報技術者試験 合格 (2015秋期) 言語 C (ANSI-C, C99) C++ (C++03, C++11, C++14) C# (7.0 ~ 7.3) Java (7, 8) Kotlin (1.3) Lua (5.1, 5.2,</description>
     </item>
     
     <item>
@@ -357,8 +170,7 @@ implementation &amp;#34;androidx.fragment:fragment-ktx:1.2.0-rc04&amp;#34; class
       <pubDate>Tue, 17 Dec 2019 00:30:02 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2019/12_17_00_hello_world/</guid>
-      <description>hello world ハローワールドではなくハローワークしろ。
-class Foo { fun bar() = Log.i(&amp;#34;baz&amp;#34;, &amp;#34;hello world&amp;#34;) } </description>
+      <description>hello world ハローワールドではなくハローワークしろ。 class Foo { fun bar() = Log.i(&amp;#34;baz&amp;#34;, &amp;#34;hello world&amp;#34;) }</description>
     </item>
     
   </channel>

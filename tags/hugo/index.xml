@@ -17,11 +17,7 @@
       <pubDate>Sun, 29 Dec 2019 03:05:26 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2019/12_29_00_twitter_tweet/</guid>
-      <description>必要な設定 https://gohugo.io/news/0.60.0-relnotes/
-config.toml に以下を追記する必要がある。
-[markup] [markup.goldmark] [markup.goldmark.renderer] unsafe = true 記事 その上で記事マークダウンの該当箇所では、Twitter公式の「ツイートを埋め込む」から得られた次のようなコードを記述する。
-&amp;lt;blockquote class=&amp;#34;twitter-tweet&amp;#34;&amp;gt;&amp;lt;p lang=&amp;#34;ja&amp;#34; dir=&amp;#34;ltr&amp;#34;&amp;gt;この十年で良かったアニメ10選書こうとして、10個に絞るのも難しいし何度も観て好きなはずなのに感想らしい感想が出てこないのも多くてなんというか何&amp;lt;/p&amp;gt;&amp;amp;mdash; すいはん (@suihan742) &amp;lt;a href=&amp;#34;https://twitter.com/suihan742/status/1210955996861882370?ref_src=twsrc%5Etfw&amp;#34;&amp;gt;December 28, 2019&amp;lt;/a&amp;gt;&amp;lt;/blockquote&amp;gt; &amp;lt;script async src=&amp;#34;https://platform.twitter.com/widgets.js&amp;#34; charset=&amp;#34;utf-8&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 結果 この十年で良かったアニメ10選書こうとして、10個に絞るのも難しいし何度も観て好きなはずなのに感想らしい感想が出てこないのも多くてなんというか何
-&amp;mdash; すいはん (@suihan742) December 28, 2019  </description>
+      <description>必要な設定 https://gohugo.io/news/0.60.0-relnotes/ config.toml に以下を追記する必要がある。 [markup] [markup.goldmark] [markup.goldmark.renderer] unsafe = true 記事 その上で記事マークダウンの該当箇所では、Twitter公式の「ツイートを埋め込む」</description>
     </item>
     
     <item>
@@ -30,19 +26,7 @@ config.toml に以下を追記する必要がある。
       <pubDate>Thu, 26 Dec 2019 01:09:42 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2019/12_26_00_theme_customize/</guid>
-      <description>どこをどう変えたか、どうやって変えたか……etcを忘れそうなので急ぎメモ。
-ベーステーマ github-style
-サンプルページ
-GitHub風……というかCSSとか一部GitHubからそのまま持ってきてる感じのあるテーマ。
-改修点 追記 (2020/01/16 05:00) トップページに草生やした GitHubで何か活動した日には草が生えるやつ。
-ここではとりあえず「記事を新規投稿したらcount+=1」するようにした。
-動的なことはやりたくないので、この草も頑張ってHugoで生成している。(ので、まぁちょっとアレな感じではある)
-■をクリックするとその日に投稿した記事一覧画面に遷移するようにした。
-この画面は一年分の記事を表示する画面をHugoで生成しておいて、表示時に要らない部分をjavascriptで消している。paginatorとの兼ね合いとかに問題がありそうなのでなんとかしたい。
-余裕があれば日毎の記事一覧もなんかこういい感じにトップ画面に表示できるようにしたい。
- 追記 (2020/01/15 04:20) 1. GitHubのファイル変更履歴へのリンクを追加。 /layouts/partials/post.html 64 65 66 67 68 69  &amp;lt;div class=&amp;#34;d-flex py-1 py-md-0 flex-auto flex-order-1 flex-md-order-2 flex-sm-grow-0 flex-justify-between&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;BtnGroup&amp;#34;&amp;gt; {{ $historyUrl := add (substr (printf &amp;#34;https://github.com/%s/hugo_files/commits/master/content%s&amp;#34; .Site.Params.github .RelPermalink) 0 -1) &amp;#34;.md&amp;#34; }} &amp;lt;a rel=&amp;#34;nofollow&amp;#34; class=&amp;#34;btn btn-sm BtnGroup-item&amp;#34; href=&amp;#34;{{ $historyUrl }}&amp;#34;&amp;gt;History&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt;   ファイルパスの取得に.File.Pathを使用すると、ディレクトリの区切り文字がエスケープされてしまってどうしようもなかった。
-.Permalink、.RelPermalinkを使用する場合は何故かエスケープは回避されるようなのでこれで/posts/2019/hoge/みたいな文字列を取得し、最後の/を削って&amp;quot;.md&amp;quot;をくっ付ける力技で(無理矢理)解決。
-2. post.htmlの「投稿日時」「更新日時」を絶対時間で表示するように変更。 ついでに「更新日時」は「投稿日時」と異なる場合のみ表示するようにした。</description>
+      <description>どこをどう変えたか、どうやって変えたか……etcを忘れそうなので急ぎメモ。 ベーステーマ github-style サンプルページ GitHub風……というかCSSとか一</description>
     </item>
     
     <item>
@@ -51,8 +35,7 @@ GitHub風……というかCSSとか一部GitHubからそのまま持ってき�
       <pubDate>Tue, 17 Dec 2019 00:30:02 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2019/12_17_00_hello_world/</guid>
-      <description>hello world ハローワールドではなくハローワークしろ。
-class Foo { fun bar() = Log.i(&amp;#34;baz&amp;#34;, &amp;#34;hello world&amp;#34;) } </description>
+      <description>hello world ハローワールドではなくハローワークしろ。 class Foo { fun bar() = Log.i(&amp;#34;baz&amp;#34;, &amp;#34;hello world&amp;#34;) }</description>
     </item>
     
   </channel>

@@ -17,15 +17,7 @@
       <pubDate>Sat, 11 Jan 2020 04:30:41 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2020/01_11_00_hide_bottom_view_on_scroll_behavior/</guid>
-      <description>関連記事 スクロールで画面上下端のツールバーやボタンを表示/非表示
-前提  HideBottomViewOnScrollBehaviorを使用することでコンテンツのスクロールにあわせて画面下部の表示物を表示したり隠したりできる。 protectedメソッドslideDown(child)が呼ばれることで画面下端より下にビューを移動して隠す。slideUp(child)で元の位置に戻して再表示する。  問題 たとえばコンテンツ部分にタブを表示していて、そのコンテンツ部分にはRecyclerViewが配置されているとする。
-移動前のタブでスクロールによって画面下部のビュー(以下BottomView)を隠したあとでタブを移動する。
-もし移動先のタブにスクロールできるものが無かった場合、そのタブを前面に表示している限りはBottomViewを再表示することができなくなってしまう。
-解決方法 タブが変更されたらBottomViewを強制的に再表示するようにする。
-そのためには、HideBottomViewOnScrollBehaviorをオーバーライドしてslideDown(...)、slideUp(...)を外から呼べるようにする必要がある。
-様子 画面下部FAB部分がタブの切り替えと同時に再表示される。
-このFAB部分には以下のExtendedHideBottomViewOnScrollBehavior(相当のもの)をlayoutParams.behaviorに設定している。
-ExtendedHideBottomViewOnScrollBehavior.kt package com.suihan74.utilities import android.content.Context import android.util.AttributeSet import android.view.View import com.google.android.material.behavior.HideBottomViewOnScrollBehavior class ExtendedHideBottomViewOnScrollBehavior&amp;lt;V : View&amp;gt;( context: Context?, attrs: AttributeSet? ) : HideBottomViewOnScrollBehavior&amp;lt;V&amp;gt;(context, attrs) { public override fun slideDown(child: V) { super.slideDown(child) } public override fun slideUp(child: V) { super.slideUp(child) } } HogeActivity.kt ... tab_layout.apply { setupWithViewPager(viewPager) addOnTabSelectedListener(object :TabLayout.OnTabSelectedListener { override fun onTabSelected(tab: TabLayout.Tab?) { // タブを切り替えたらBottomViewを再表示する  showButtons() } override fun onTabUnselected(p0: TabLayout.</description>
+      <description>関連記事 スクロールで画面上下端のツールバーやボタンを表示/非表示 前提 HideBottomViewOnScrollBehaviorを使用するこ</description>
     </item>
     
     <item>
@@ -34,12 +26,7 @@ ExtendedHideBottomViewOnScrollBehavior.kt package com.suihan74.utilities import 
       <pubDate>Mon, 06 Jan 2020 02:49:08 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2020/01_06_01_selectable_textview/</guid>
-      <description>問題 以下の条件のTextViewを用意する。
- movementMethodにLinkMovementMethodを設定する。 android:textIsSelectable=&amp;quot;true&amp;quot;を設定する。  そして以下の手順で操作を行うと、アプリがクラッシュする。
- 該当TextViewの文字列を選択する。 TextView上の適当な領域をタップして文字列選択を解除する。 破滅する。  ちなみに、
-LinkMovementMethodのreturn super.onTouchEvent(...)の部分にブレークポイントを置いてから文字列選択解除すると発生しなくてなんやねんってなった。
-また、解除時のタップは単押し長押しに関わらずとにかくMotionEvent.ACTION_DOWNがきた時点で駄目っぽかった。
-様子 ログ java.lang.IllegalArgumentException: Invalid offset: -1. Valid range is [0, 16] at android.text.method.WordIterator.checkOffsetIsValid(WordIterator.java:380) at android.text.method.WordIterator.isBoundary(WordIterator.java:101) at android.widget.Editor$SelectionStartHandleView.positionAtCursorOffset(Editor.java:4260) at android.widget.Editor$HandleView.updatePosition(Editor.java:3708) at android.widget.Editor$PositionListener.onPreDraw(Editor.java:2507) at android.view.ViewTreeObserver.dispatchOnPreDraw(ViewTreeObserver.java:944) at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:2055) at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:1107) at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:6013) at android.view.Choreographer$CallbackRecord.run(Choreographer.java:858) at android.view.Choreographer.doCallbacks(Choreographer.java:670) at android.view.Choreographer.doFrame(Choreographer.java:606) at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:844) at android.os.Handler.handleCallback(Handler.java:739) at android.os.Handler.dispatchMessage(Handler.java:95) at android.os.Looper.loop(Looper.java:148) at android.app.ActivityThread.main(ActivityThread.java:5417) at java.lang.reflect.Method.invoke(Native Method) at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726) at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616) 「オフセット: -1を選択しようとしてますね」じゃねぇんじゃ。</description>
+      <description>問題 以下の条件のTextViewを用意する。 movementMethodにLinkMovementMethodを設定する。 android:t</description>
     </item>
     
     <item>
@@ -48,10 +35,7 @@ LinkMovementMethodのreturn super.onTouchEvent(...)の部分にブレークポ�
       <pubDate>Mon, 06 Jan 2020 00:18:01 +0900</pubDate>
       
       <guid>https://suihan74.github.io/posts/2020/01_06_00_marquee_toolbar/</guid>
-      <description>やりたいこと こういうの。
-ツールバーのtitle部分の文字列が横に流れ続けている。
-カスタムビューの作成 Toolbarを継承した次のようなカスタムビューを作成する。
-MarqueeToolbar.kt package com.suihan74.utilities import android.content.Context import android.text.TextUtils import android.util.AttributeSet import android.widget.TextView import androidx.appcompat.widget.Toolbar class MarqueeToolbar : Toolbar { constructor(context: Context, attributeSet: AttributeSet? = null) : super(context, attributeSet) constructor(context: Context, attributeSet: AttributeSet?, defStyleAttr: Int) : super(context, attributeSet, defStyleAttr) /** タイトルの設定が完了しているか否か */ private var reflected: Boolean = false /** タイトル部分のTextView */ private var titleTextView: TextView? = null override fun setTitle(resId: Int) { if (!reflected) { reflected = reflectTitle() } super.</description>
+      <description>やりたいこと こういうの。 ツールバーのtitle部分の文字列が横に流れ続けている。 カスタムビューの作成 Toolbarを継承した次のようなカスタ</description>
     </item>
     
   </channel>
