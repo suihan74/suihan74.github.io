@@ -13,11 +13,12 @@
 <body>
 
 <script type="text/javascript">
-    function onClickDay(year, date) {
-        console.log("/posts/" + year + "/?date=" + date);
-        window.open("/posts/" + year + "/?date=" + date, "_parent")
+    function onClickDay(date) {
+        console.log("/archives/" + date);
+        window.open("/archives/" + date + "/", "_parent")
     }
 </script>
 
 </body>
 </html>
+

@@ -3,7 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://suihan74.github.io/archives/2020/</loc>
+    <lastmod>2020-01-17T01:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://suihan74.github.io/posts/2020/</loc>
+    <lastmod>2020-01-17T01:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://suihan74.github.io/archives/2020/01/</loc>
+    <lastmod>2020-01-17T01:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://suihan74.github.io/archives/2020/01/15/</loc>
     <lastmod>2020-01-17T01:30:00+09:00</lastmod>
   </url>
   
@@ -14,6 +29,11 @@
   
   <url>
     <loc>https://suihan74.github.io/tags/android/</loc>
+    <lastmod>2020-01-17T01:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://suihan74.github.io/archives/</loc>
     <lastmod>2020-01-17T01:30:00+09:00</lastmod>
   </url>
   
@@ -38,6 +58,11 @@
   </url>
   
   <url>
+    <loc>https://suihan74.github.io/archives/2020/01/13/</loc>
+    <lastmod>2020-01-13T15:11:46+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://suihan74.github.io/tags/hatena/</loc>
     <lastmod>2020-01-13T15:11:46+09:00</lastmod>
   </url>
@@ -53,6 +78,11 @@
   </url>
   
   <url>
+    <loc>https://suihan74.github.io/archives/2020/01/11/</loc>
+    <lastmod>2020-01-11T04:30:41+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://suihan74.github.io/posts/2020/01_11_00_hide_bottom_view_on_scroll_behavior/</loc>
     <lastmod>2020-01-11T04:30:41+09:00</lastmod>
   </url>
@@ -60,6 +90,11 @@
   <url>
     <loc>https://suihan74.github.io/tags/view/</loc>
     <lastmod>2020-01-11T04:30:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://suihan74.github.io/archives/2020/01/09/</loc>
+    <lastmod>2020-01-09T17:08:19+09:00</lastmod>
   </url>
   
   <url>
@@ -73,8 +108,18 @@
   </url>
   
   <url>
+    <loc>https://suihan74.github.io/archives/2020/01/07/</loc>
+    <lastmod>2020-01-07T03:02:05+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://suihan74.github.io/posts/2020/01_07_00_start_activity_for_result/</loc>
     <lastmod>2020-01-07T03:02:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://suihan74.github.io/archives/2020/01/06/</loc>
+    <lastmod>2020-01-06T02:49:08+09:00</lastmod>
   </url>
   
   <url>
@@ -88,6 +133,11 @@
   </url>
   
   <url>
+    <loc>https://suihan74.github.io/archives/2020/01/02/</loc>
+    <lastmod>2020-01-03T00:12:34+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://suihan74.github.io/posts/2020/01_02_02_show_views_with_scrolling/</loc>
     <lastmod>2020-01-03T00:12:34+09:00</lastmod>
   </url>
@@ -95,6 +145,11 @@
   <url>
     <loc>https://suihan74.github.io/posts/2020/01_02_01_androidx_alert_dialog/</loc>
     <lastmod>2020-01-02T22:15:23+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://suihan74.github.io/archives/2020/01/12/</loc>
+    <lastmod>2020-01-02T17:04:24+09:00</lastmod>
   </url>
   
   <url>
@@ -118,8 +173,33 @@
   </url>
   
   <url>
+    <loc>https://suihan74.github.io/calendar/2020/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://suihan74.github.io/calendar/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://suihan74.github.io/archives/2019/</loc>
+    <lastmod>2020-01-16T05:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://suihan74.github.io/posts/2019/</loc>
     <lastmod>2020-01-16T05:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://suihan74.github.io/archives/2019/12/</loc>
+    <lastmod>2020-01-16T05:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://suihan74.github.io/archives/2019/12/29/</loc>
+    <lastmod>2019-12-29T03:05:26+09:00</lastmod>
   </url>
   
   <url>
@@ -138,6 +218,11 @@
   </url>
   
   <url>
+    <loc>https://suihan74.github.io/archives/2019/12/27/</loc>
+    <lastmod>2019-12-29T15:42:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://suihan74.github.io/tags/anime/</loc>
     <lastmod>2019-12-29T15:42:00+09:00</lastmod>
   </url>
@@ -145,6 +230,11 @@
   <url>
     <loc>https://suihan74.github.io/tags/note/</loc>
     <lastmod>2019-12-29T15:42:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://suihan74.github.io/archives/2019/12/26/</loc>
+    <lastmod>2020-01-16T05:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -158,6 +248,11 @@
   </url>
   
   <url>
+    <loc>https://suihan74.github.io/archives/2019/12/23/</loc>
+    <lastmod>2019-12-23T01:18:10+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://suihan74.github.io/tags/onbackpresseddispatcher/</loc>
     <lastmod>2019-12-23T02:01:00+09:00</lastmod>
   </url>
@@ -168,8 +263,18 @@
   </url>
   
   <url>
+    <loc>https://suihan74.github.io/archives/2019/12/22/</loc>
+    <lastmod>2019-12-22T03:57:59+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://suihan74.github.io/posts/2019/12_22_00/</loc>
     <lastmod>2019-12-22T03:57:59+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://suihan74.github.io/archives/2019/12/20/</loc>
+    <lastmod>2019-12-23T02:01:00+09:00</lastmod>
   </url>
   
   <url>
@@ -183,24 +288,18 @@
   </url>
   
   <url>
+    <loc>https://suihan74.github.io/archives/2019/12/17/</loc>
+    <lastmod>2019-12-18T01:57:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://suihan74.github.io/posts/2019/12_17_00_hello_world/</loc>
     <lastmod>2019-12-18T01:57:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://suihan74.github.io/calendar/2019/</loc>
-  </url>
-  
-  <url>
-    <loc>https://suihan74.github.io/calendar/2020/</loc>
-  </url>
-  
-  <url>
-    <loc>https://suihan74.github.io/calendar/</loc>
-  </url>
-  
-  <url>
-    <loc>https://suihan74.github.io/categories/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>

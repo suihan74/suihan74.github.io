@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2020/01/06 on すいはんぶろぐ.io</title>
+    <link>https://suihan74.github.io/archives/2020/01/06/</link>
+    <description>Recent content in 2020/01/06 on すいはんぶろぐ.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 06 Jan 2020 02:49:08 +0900</lastBuildDate>
+    
+	<atom:link href="https://suihan74.github.io/archives/2020/01/06/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LinkMovementMethodを設定したTextViewの文字列選択を解除するとクラッシュする</title>
+      <link>https://suihan74.github.io/posts/2020/01_06_01_selectable_textview/</link>
+      <pubDate>Mon, 06 Jan 2020 02:49:08 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2020/01_06_01_selectable_textview/</guid>
+      <description>問題 以下の条件のTextViewを用意する。 movementMethodにLinkMovementMethodを設定する。 android:t</description>
+    </item>
+    
+    <item>
+      <title>タイトルテキストがMarqueeするToolbarを作る</title>
+      <link>https://suihan74.github.io/posts/2020/01_06_00_marquee_toolbar/</link>
+      <pubDate>Mon, 06 Jan 2020 00:18:01 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2020/01_06_00_marquee_toolbar/</guid>
+      <description>やりたいこと こういうの。 ツールバーのtitle部分の文字列が横に流れ続けている。 カスタムビューの作成 Toolbarを継承した次のようなカスタ</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1183,7 +1183,7 @@
                                               "
                                               data-count="1"
                                               data-date="2019-12-17 00:00:00 &#43;0000 UTC"
-                                              onclick="onClickDay('2019', '2019-12-17');">
+                                              onclick="onClickDay('2019\/12\/17');">
                                             <title>1 post on 2019-12-17</title>
                                         </rect>
                                         <rect class="day" width="12" height="12" x="16" y="45" fill="#ebedf0" data-count="0" data-date="2019-12-18 00:00:00 &#43;0000 UTC">
@@ -1197,7 +1197,7 @@
                                               "
                                               data-count="1"
                                               data-date="2019-12-20 00:00:00 &#43;0000 UTC"
-                                              onclick="onClickDay('2019', '2019-12-20');">
+                                              onclick="onClickDay('2019\/12\/20');">
                                             <title>1 post on 2019-12-20</title>
                                         </rect>
                                         <rect class="day" width="12" height="12" x="16" y="90" fill="#ebedf0" data-count="0" data-date="2019-12-21 00:00:00 &#43;0000 UTC">
@@ -1210,7 +1210,7 @@
                                               "
                                               data-count="1"
                                               data-date="2019-12-22 00:00:00 &#43;0000 UTC"
-                                              onclick="onClickDay('2019', '2019-12-22');">
+                                              onclick="onClickDay('2019\/12\/22');">
                                             <title>1 post on 2019-12-22</title>
                                         </rect>
                                         <rect class="day" width="12" height="12" x="16" y="15"
@@ -1218,7 +1218,7 @@
                                               "
                                               data-count="1"
                                               data-date="2019-12-23 00:00:00 &#43;0000 UTC"
-                                              onclick="onClickDay('2019', '2019-12-23');">
+                                              onclick="onClickDay('2019\/12\/23');">
                                             <title>1 post on 2019-12-23</title>
                                         </rect>
                                         <rect class="day" width="12" height="12" x="16" y="30" fill="#ebedf0" data-count="0" data-date="2019-12-24 00:00:00 &#43;0000 UTC">
@@ -1232,7 +1232,7 @@
                                               "
                                               data-count="1"
                                               data-date="2019-12-26 00:00:00 &#43;0000 UTC"
-                                              onclick="onClickDay('2019', '2019-12-26');">
+                                              onclick="onClickDay('2019\/12\/26');">
                                             <title>1 post on 2019-12-26</title>
                                         </rect>
                                         <rect class="day" width="12" height="12" x="16" y="75" fill="#ebedf0" data-count="0" data-date="2019-12-27 00:00:00 &#43;0000 UTC">
@@ -1248,7 +1248,7 @@
                                               "
                                               data-count="2"
                                               data-date="2019-12-29 00:00:00 &#43;0000 UTC"
-                                              onclick="onClickDay('2019', '2019-12-29');">
+                                              onclick="onClickDay('2019\/12\/29');">
                                             <title>2 posts on 2019-12-29</title>
                                         </rect>
                                         <rect class="day" width="12" height="12" x="16" y="15" fill="#ebedf0" data-count="0" data-date="2019-12-30 00:00:00 &#43;0000 UTC">
@@ -1299,11 +1299,12 @@
     
 
 <script type="text/javascript">
-    function onClickDay(year, date) {
-        console.log("/posts/" + year + "/?date=" + date);
-        window.open("/posts/" + year + "/?date=" + date, "_parent")
+    function onClickDay(date) {
+        console.log("/archives/" + date);
+        window.open("/archives/" + date + "/", "_parent")
     }
 </script>
 
 </body>
 </html>
+

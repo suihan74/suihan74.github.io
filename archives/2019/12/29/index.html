@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -10,12 +11,12 @@
     <link crossorigin="anonymous" media="all"
         rel="stylesheet" href="https://suihan74.github.io/css/user.css"/>
     <meta name="viewport" content="width=device-width">
-    <title>Categories - すいはんぶろぐ.io</title>
+    <title>2019/12/29 - すいはんぶろぐ.io</title>
 
-    <meta property="og:url" content="https://suihan74.github.io/categories/"/>
+    <meta property="og:url" content="https://suihan74.github.io/archives/2019/12/29/"/>
     <meta property="og:site_name" content="すいはんぶろぐ.io"/>
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Categories" />
+    <meta property="og:title" content="2019/12/29" />
     <meta property="og:description" content=""/>
     <meta name="description" content=""/>
     <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://suihan74.github.io/images/favicon.ico">
@@ -82,9 +83,7 @@
   
 <div class="application-main " data-commit-hovercards-enabled>
     <main id="js-pjax-container" data-pjax-container>
-        <div class="container-xl clearfix px-3 mt-4">
-
-            <div class="h-card col-lg-3 col-md-4 col-12 float-md-left pr-md-3 pr-xl-6" itemscope
+        <div class="container-xl clearfix px-3 mt-4"><div class="h-card col-lg-3 col-md-4 col-12 float-md-left pr-md-3 pr-xl-6" itemscope
     itemtype="http://schema.org/Person">
     <div class="user-profile-sticky-bar js-user-profile-sticky-bar">
     </div>
@@ -178,12 +177,6 @@
     </div>
 </div>
 
-
-            
-
-
-
-
 <div class="col-lg-9 col-md-8 col-12 float-md-left pl-md-2">
     <div class="UnderlineNav width-full user-profile-nav top-0 is-placeholder"
         style="visibility: hidden; display: none; height: 56px;"></div>
@@ -193,13 +186,13 @@
             <a aria-current="page" class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3 " href="https://suihan74.github.io/">
                 Overview
             </a>
-            <a class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3" href="https://suihan74.github.io/posts/">
+            <a class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3 selected" href="https://suihan74.github.io/posts/">
                 Posts
                 <span class="Counter hide-lg hide-md hide-sm">
                     17
                 </span>
             </a>
-            <a class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3 selected" href="https://suihan74.github.io/tags/">
+            <a class="UnderlineNav-item mr-0 mr-md-1 mr-lg-3" href="https://suihan74.github.io/tags/">
                 Tags
                 <span class="Counter hide-lg hide-md hide-sm">
                     15
@@ -214,17 +207,68 @@
     <div class="position-relative">
         <div id="user-repositories-list">
             <ul data-filterable-for="your-repos-filter" data-filterable-type="substring">
+                <li class="post-item 2019-12-29 2019-12-29 col-12 d-flex width-full py-4 border-bottom public fork">
+                    <div class="col-12 col-lg-12 d-inline-block">
+                        <div class="d-inline-block mb-1">
+                            <h3>
+                                <a href="https://suihan74.github.io/posts/2019/12_29_00_twitter_tweet/">HugoでTwitterの投稿を引用表示するために必要な設定</a>
+                            </h3>
+                        </div>
+
+                        <div name="posts-post">
+                            そのままTwitterの引用コードをコピーしても表示できないっぽいという話
+                        </div>
+
+                        <div class="mb-0 mt-2 f6 text-gray">
+                                <span class="f6 text-gray mt-1">
+                                    <svg class="octicon octicon-tag" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M7.73 1.73C7.26 1.26 6.62 1 5.96 1H3.5C2.13 1 1 2.13 1 3.5v2.47c0 .66.27 1.3.73 1.77l6.06 6.06c.39.39 1.02.39 1.41 0l4.59-4.59a.996.996 0 000-1.41L7.73 1.73zM2.38 7.09c-.31-.3-.47-.7-.47-1.13V3.5c0-.88.72-1.59 1.59-1.59h2.47c.42 0 .83.16 1.13.47l6.14 6.13-4.73 4.73-6.13-6.15zM3.01 3h2v2H3V3h.01z" />
+                                    </svg>
+                                    <a href="/tags/hugo/">hugo</a> 
+                                </span>
+                            <div class="mt-1">
+                                Updated <relative-time datetime="2019-12-29 03:05" class="no-wrap">
+                                    2019-12-29 03:05</relative-time>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 
             </ul>
-            
         </div>
     </div>
 </div>
 
 
+<script type="text/javascript">
+    function getQueryParam(key) {
+        const value = window.location.href.match(new RegExp("[?&]" + key + "=(.*?)(&|$|#)"));
+        if (value == null) return '';
+        return decodeURIComponent(value[1]);
+    }
+
+    function onLoad() {
+        const date = getQueryParam("date");
+        if (date == '') return;
+
+        
+        const posts = document.getElementsByClassName("post-item");
+        [...posts].forEach(post => {
+            if (!post.classList.contains(date)) {
+                post.parentNode.removeChild(post);
+            }
+        });
+        const container = document.getElementsByClassName("paginate-container");
+        [...container].forEach(c => {
+            c.parentNode.removeChild(c);
+        })
+    }
+
+    onLoad();
+</script>
+
     </main>
 </div>
-
   <div class="footer container-lg width-full p-responsive" role="contentinfo">
     <div
         class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
