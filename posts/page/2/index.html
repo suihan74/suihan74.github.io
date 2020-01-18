@@ -408,34 +408,6 @@
     </div>
 </div>
 
-
-<script type="text/javascript">
-    function getQueryParam(key) {
-        const value = window.location.href.match(new RegExp("[?&]" + key + "=(.*?)(&|$|#)"));
-        if (value == null) return '';
-        return decodeURIComponent(value[1]);
-    }
-
-    function onLoad() {
-        const date = getQueryParam("date");
-        if (date == '') return;
-
-        
-        const posts = document.getElementsByClassName("post-item");
-        [...posts].forEach(post => {
-            if (!post.classList.contains(date)) {
-                post.parentNode.removeChild(post);
-            }
-        });
-        const container = document.getElementsByClassName("paginate-container");
-        [...container].forEach(c => {
-            c.parentNode.removeChild(c);
-        })
-    }
-
-    onLoad();
-</script>
-
     </main>
 </div>
   <div class="footer container-lg width-full p-responsive" role="contentinfo">

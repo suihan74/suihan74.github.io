@@ -427,7 +427,7 @@
                 <a id="year-link-2020"
                     class="js-year-link filter-item px-3 mb-2 py-2 selected"
                     aria-label="Contribution activity in 2020"
-                    onclick="load_calendar(&#34;2020&#34;);">2020</a>
+                    onclick="load_calendar('2020');">2020</a>
                 </li>
                 
                 
@@ -435,7 +435,7 @@
                 <a id="year-link-2019"
                     class="js-year-link filter-item px-3 mb-2 py-2 "
                     aria-label="Contribution activity in 2019"
-                    onclick="load_calendar(&#34;2019&#34;);">2019</a>
+                    onclick="load_calendar('2019');">2019</a>
                 </li>
                 
             </ul>
@@ -447,7 +447,7 @@
     function load_calendar(year) {
         document.getElementById('calendar').contentWindow.location.replace("/calendar/"+year+"/");
     }
-    load_calendar( 2020 );
+    load_calendar('2020');
 </script>
 
 
