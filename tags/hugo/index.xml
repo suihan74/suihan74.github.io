@@ -6,10 +6,19 @@
     <description>Recent content in hugo on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 29 Dec 2019 03:05:26 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jan 2020 02:25:00 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo - Taxonomyを使ってアーカイブページを作る</title>
+      <link>https://suihan74.github.io/posts/2020/01_20_00_hugo_taxonomies/</link>
+      <pubDate>Mon, 20 Jan 2020 02:25:00 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2020/01_20_00_hugo_taxonomies/</guid>
+      <description>参考 静的サイトジェネレータHugoを使ったサイト構築（アーカイブ編） · feedtailor Inc. スタッフブログ 参考というかほぼそのまま全内容なのだが。。。 1. con</description>
+    </item>
     
     <item>
       <title>HugoでTwitterの投稿を引用表示するために必要な設定</title>

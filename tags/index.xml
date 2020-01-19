@@ -6,10 +6,28 @@
     <description>Recent content in Tags on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 15 Jan 2020 01:30:40 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jan 2020 02:25:00 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>hugo</title>
+      <link>https://suihan74.github.io/tags/hugo/</link>
+      <pubDate>Mon, 20 Jan 2020 02:25:00 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>memo</title>
+      <link>https://suihan74.github.io/tags/memo/</link>
+      <pubDate>Mon, 20 Jan 2020 02:25:00 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/memo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>activity</title>
@@ -44,15 +62,6 @@
       <pubDate>Mon, 13 Jan 2020 13:43:46 +0900</pubDate>
       
       <guid>https://suihan74.github.io/tags/hatena/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>memo</title>
-      <link>https://suihan74.github.io/tags/memo/</link>
-      <pubDate>Mon, 13 Jan 2020 13:43:46 +0900</pubDate>
-      
-      <guid>https://suihan74.github.io/tags/memo/</guid>
       <description></description>
     </item>
     
@@ -98,15 +107,6 @@
       <pubDate>Thu, 02 Jan 2020 17:04:24 +0900</pubDate>
       
       <guid>https://suihan74.github.io/tags/viewmodel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://suihan74.github.io/tags/hugo/</link>
-      <pubDate>Sun, 29 Dec 2019 03:05:26 +0900</pubDate>
-      
-      <guid>https://suihan74.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
