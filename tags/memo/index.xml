@@ -6,10 +6,19 @@
     <description>Recent content in memo on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 20 Jan 2020 02:25:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jan 2020 00:42:28 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/tags/memo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Satenaで最近多いスパムからのスター通知を一部無視できるようにした</title>
+      <link>https://suihan74.github.io/posts/2020/01_27_00_hatena_star_from_spam/</link>
+      <pubDate>Mon, 27 Jan 2020 00:42:28 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/posts/2020/01_27_00_hatena_star_from_spam/</guid>
+      <description>「存在しないブコメ」にはてなスターを付けるのはスパム行為なのか？ この件。 最近モチベーション下がっていたこともあり「とりあえずネタひとつみっけ</description>
+    </item>
     
     <item>
       <title>Hugo - Taxonomyを使ってアーカイブページを作る</title>

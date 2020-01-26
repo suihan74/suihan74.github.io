@@ -6,10 +6,37 @@
     <description>Recent content in Tags on すいはんぶろぐ.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 20 Jan 2020 02:25:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jan 2020 00:42:28 +0900</lastBuildDate>
     
 	<atom:link href="https://suihan74.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hatena</title>
+      <link>https://suihan74.github.io/tags/hatena/</link>
+      <pubDate>Mon, 27 Jan 2020 00:42:28 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/hatena/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>memo</title>
+      <link>https://suihan74.github.io/tags/memo/</link>
+      <pubDate>Mon, 27 Jan 2020 00:42:28 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/memo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Satena</title>
+      <link>https://suihan74.github.io/tags/satena/</link>
+      <pubDate>Mon, 27 Jan 2020 00:42:28 +0900</pubDate>
+      
+      <guid>https://suihan74.github.io/tags/satena/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Hugo</title>
@@ -17,15 +44,6 @@
       <pubDate>Mon, 20 Jan 2020 02:25:00 +0900</pubDate>
       
       <guid>https://suihan74.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>memo</title>
-      <link>https://suihan74.github.io/tags/memo/</link>
-      <pubDate>Mon, 20 Jan 2020 02:25:00 +0900</pubDate>
-      
-      <guid>https://suihan74.github.io/tags/memo/</guid>
       <description></description>
     </item>
     
@@ -53,15 +71,6 @@
       <pubDate>Wed, 15 Jan 2020 01:30:40 +0900</pubDate>
       
       <guid>https://suihan74.github.io/tags/kotlin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hatena</title>
-      <link>https://suihan74.github.io/tags/hatena/</link>
-      <pubDate>Mon, 13 Jan 2020 13:43:46 +0900</pubDate>
-      
-      <guid>https://suihan74.github.io/tags/hatena/</guid>
       <description></description>
     </item>
     
