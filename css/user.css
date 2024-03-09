@@ -61,7 +61,7 @@ svg.header-search-button-icon {
 .appreach {
   text-align: left;
   padding: 10px;
-  border: 1px solid #7C7C7C;
+/*  border: 1px solid #7C7C7C;*/
   overflow: hidden;
 }
 .appreach:after {
